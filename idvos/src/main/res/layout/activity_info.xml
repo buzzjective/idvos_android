@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/info_padding_horizontal"
+    android:paddingRight="@dimen/info_padding_horizontal"
+    android:paddingTop="@dimen/info_padding_vertical"
+    android:paddingBottom="@dimen/info_padding_vertical">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_above="@+id/divider"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/info_text_size"
+                android:textColor="@color/info_text_color"
+                android:text="@string/info_info"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/hand"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="DATENSCHUTZ"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
+                        android:text="Einhaltung höchster Datenschutzstandards durch Datensparsamkeit"/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/shield"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="DATENSICHERHEIT"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
+                        android:text="P2P-Verbindung erfüllt Anforderungen an höchste Datensicherheit mit Verwendung zertifizierter Rechenzentren in Deutschland."/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:src="@drawable/cup"/>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="24/7 SERVICE GARANTIE"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|left"
+                        android:text="Service-Zeiten 24 Stunden, 7 Tage die Woche."/>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/button_call"
+        style="@style/green_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:textSize="14sp"
+        android:text="@string/info_call"/>
+    
+   <!-- <ImageView
+        android:id="@+id/button_facebook"
+        android:layout_width="@dimen/info_social_button_size"
+        android:layout_height="@dimen/info_social_button_size"
+        android:layout_above="@id/button_call"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/info_box_margin_vertical"
+        android:layout_marginTop="@dimen/info_box_margin_vertical"
+        android:layout_marginLeft="@dimen/info_box_margin_horizontal"
+        android:layout_marginRight="@dimen/info_box_margin_horizontal"
+        android:src="@drawable/ic_launcher"/>
+    
+    <ImageView
+        android:id="@+id/button_linkedin"
+        android:layout_width="@dimen/info_social_button_size"
+        android:layout_height="@dimen/info_social_button_size"
+        android:layout_alignBottom="@id/button_facebook"
+        android:layout_toRightOf="@id/button_facebook"
+        android:src="@drawable/ic_launcher"/>
+    
+    <ImageView
+        android:id="@+id/button_twitter"
+        android:layout_width="@dimen/info_social_button_size"
+        android:layout_height="@dimen/info_social_button_size"
+        android:layout_alignBottom="@id/button_facebook"
+        android:layout_toLeftOf="@id/button_facebook"
+        android:src="@drawable/ic_launcher"/>
+    -->
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@id/button_call"
+        android:layout_marginBottom="@dimen/info_box_margin_vertical"
+        android:background="@drawable/info_divider"/>
+
+
+
+</RelativeLayout>

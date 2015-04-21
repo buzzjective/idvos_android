@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+    <LinearLayout
+        android:id="@+id/tan_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@color/taninput_background">
+        
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="@dimen/taninput_title_text_size"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:text="@string/taninput_title"/>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+            
+            <EditText
+                android:id="@+id/digit_1"
+                android:layout_width="@dimen/taninput_digit_size"
+                android:layout_height="@dimen/taninput_digit_size"
+                android:layout_marginRight="@dimen/taninput_digit_margin"
+                android:textSize="@dimen/taninput_digit_text_size"
+                android:textColor="@color/taninput_digit_text_color"
+                android:inputType="number"
+                android:gravity="center"
+                android:background="@drawable/box"/>
+            
+            <EditText
+                android:id="@+id/digit_2"
+                android:layout_width="@dimen/taninput_digit_size"
+                android:layout_height="@dimen/taninput_digit_size"
+                android:layout_marginRight="@dimen/taninput_digit_margin"
+                android:textSize="@dimen/taninput_digit_text_size"
+                android:textColor="@color/taninput_digit_text_color"
+                android:inputType="number"
+                android:gravity="center"
+                android:background="@drawable/box"/>
+            
+            <EditText
+                android:id="@+id/digit_3"
+                android:layout_width="@dimen/taninput_digit_size"
+                android:layout_height="@dimen/taninput_digit_size"
+                android:layout_marginRight="@dimen/taninput_digit_margin"
+                android:textSize="@dimen/taninput_digit_text_size"
+                android:textColor="@color/taninput_digit_text_color"
+                android:inputType="number"
+                android:gravity="center"
+                android:background="@drawable/box"/>
+            
+            <EditText
+                android:id="@+id/digit_4"
+                android:layout_width="@dimen/taninput_digit_size"
+                android:layout_height="@dimen/taninput_digit_size"
+                android:layout_marginRight="@dimen/taninput_digit_margin"
+                android:textSize="@dimen/taninput_digit_text_size"
+                android:textColor="@color/taninput_digit_text_color"
+                android:inputType="number"
+                android:gravity="center"
+                android:background="@drawable/box"/>
+            
+            <EditText
+                android:id="@+id/digit_5"
+                android:layout_width="@dimen/taninput_digit_size"
+                android:layout_height="@dimen/taninput_digit_size"
+                android:textSize="@dimen/taninput_digit_text_size"
+                android:textColor="@color/taninput_digit_text_color"
+                android:inputType="number"
+                android:gravity="center"
+                android:background="@drawable/box"/>
+            
+        </LinearLayout>
+        
+        <Button
+            android:id="@+id/text_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/taninput_status_margin_top"
+            android:layout_marginBottom="@dimen/taninput_status_margin_bottom"
+            android:text="Bestätigen"
+            android:textSize="@dimen/taninput_status_text_size"
+            android:padding="5dp"
+            style="@style/button"
+            android:textColor="@color/taninput_status_text_color"
+            android:gravity="center_vertical"/>
+        
+    </LinearLayout>
+
+</merge>
+
+

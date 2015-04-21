@@ -1,0 +1,4 @@
+include ':idvosSDK'
+include ':openTok'
+include ':volley'
+include ':idvos'

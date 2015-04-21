@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:paddingLeft="@dimen/verificationresult_padding_horizontal"
+    android:paddingRight="@dimen/verificationresult_padding_horizontal"
+    android:paddingTop="@dimen/verificationresult_padding_vertical"
+    android:paddingBottom="@dimen/verificationresult_padding_vertical">
+
+    <View
+        android:id="@+id/center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerInParent="true"/>
+    
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="@dimen/verificationresult_image_size"
+        android:layout_height="@dimen/verificationresult_image_size"
+		android:layout_centerHorizontal="true"
+		android:layout_above="@id/center"
+        android:src="@drawable/ic_launcher"/>
+    
+    <TextView
+        android:id="@+id/text_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/verificationresult_result_margin_top"
+        android:textSize="@dimen/verificationresult_result_margin_top"
+        android:textColor="@color/verificationresult_result_text_color"/>
+    
+    <TextView
+        android:id="@+id/button_confirm"
+        style="@style/gray_button"
+        android:padding="20dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/verificationresult_confirmation"/>
+
+</RelativeLayout>

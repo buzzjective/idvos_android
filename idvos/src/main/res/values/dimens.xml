@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="titlebar_height">60dp</dimen>
+    <dimen name="titlebar_title_text_size">20sp</dimen>
+    
+    <dimen name="box_corner">2dp</dimen>
+    <dimen name="box_stroke">0.5dp</dimen>
+    <dimen name="box_text_size">16sp</dimen>
+    <dimen name="box_padding_horizontal">4dp</dimen>
+    <dimen name="box_padding_vertical">8dp</dimen>
+    
+    <dimen name="button_text_size">20sp</dimen>
+    <dimen name="button_padding_vertical">12dp</dimen>
+    
+    <dimen name="start_padding_horizontal">16dp</dimen>
+    <dimen name="start_padding_vertical">16dp</dimen>
+    <dimen name="start_box_margin">20dp</dimen>
+    <dimen name="start_terms_text_size">14sp</dimen>
+    
+    <dimen name="info_padding_horizontal">12dp</dimen>
+    <dimen name="info_padding_vertical">16dp</dimen>
+    <dimen name="info_box_margin_vertical">16dp</dimen>
+    <dimen name="info_box_margin_horizontal">16dp</dimen>
+    <dimen name="info_social_button_size">48dp</dimen>
+    <dimen name="info_text_size">14sp</dimen>
+    
+    <dimen name="login_padding_horizontal">16dp</dimen>
+    <dimen name="login_padding_top">6dp</dimen>
+    <dimen name="login_padding_bottom">4dp</dimen>
+    <dimen name="login_title_margin_bottom">18dp</dimen>
+    <dimen name="login_title_text_size">20sp</dimen>
+    <dimen name="login_inputs_margin_top">18dp</dimen>
+    <dimen name="login_inputs_margin_bottom">8dp</dimen>
+    <dimen name="login_info_size">48dp</dimen>
+    <dimen name="login_input_padding_horizontal">8dp</dimen>
+    <dimen name="login_input_text_size">16sp</dimen>
+    <dimen name="login_inputs_divider_height">0.5dp</dimen>
+    <dimen name="login_desc_text_size">14sp</dimen>
+    <dimen name="login_desc_linespacing_extra">2dp</dimen>
+    
+    <dimen name="identification_instructionbar_padding_vertical">12dp</dimen>
+    <dimen name="identification_instruction_text_size">18sp</dimen>
+    <dimen name="identification_instruction_counter_width">60dp</dimen>
+    <dimen name="identification_agent_size">144dp</dimen>
+    <dimen name="identification_cam_window_height">192dp</dimen>
+    <dimen name="identification_cam_window_margin_top">36dp</dimen>
+    <dimen name="identification_cam_window_margin_horizontal">24dp</dimen>
+    <dimen name="identification_control_margin_bottom">24dp</dimen>
+    <dimen name="identification_control_margin_right">24dp</dimen>
+    <dimen name="identification_control_spacing">16dp</dimen>
+    
+    <dimen name="taninput_title_text_size">18sp</dimen>
+    <dimen name="taninput_digit_size">36dp</dimen>
+    <dimen name="taninput_digit_margin">8dp</dimen>
+    <dimen name="taninput_digit_text_size">20sp</dimen>
+    <dimen name="taninput_status_margin_top">8dp</dimen>
+    <dimen name="taninput_status_margin_bottom">4dp</dimen>
+    <dimen name="taninput_status_text_size">20sp</dimen>
+    
+    <dimen name="verificationresult_padding_horizontal">12dp</dimen>
+    <dimen name="verificationresult_padding_vertical">20dp</dimen>
+    <dimen name="verificationresult_image_size">160dp</dimen>
+    <dimen name="verificationresult_result_margin_top">20dp</dimen>
+    <dimen name="verificationresult_result_text_size">24sp</dimen>
+    
+</resources>
