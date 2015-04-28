@@ -18,12 +18,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
+            <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/info_text_size"
                 android:textColor="@color/info_text_color"
-                android:text="@string/info_info"/>
+                android:text="@string/info_info"
+                android:id="@+id/security_text"
+                android:inputType="none" />
 
 
             <LinearLayout

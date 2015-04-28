@@ -54,7 +54,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
 
 	private static final String TAG = "IdentificationActivity";
 	
-	public static final String SERVER_URL = "https://integration.idvos.de/api/v1/mobile/";
+	public static final String SERVER_URL = "https://idvos.de/api/v1/mobile/";
     public String tmp = "";
 	private static final String TAN_CODE = "tan_code";
 	

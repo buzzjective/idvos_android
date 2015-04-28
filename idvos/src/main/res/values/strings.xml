@@ -18,7 +18,7 @@
 </ul>
     </string>
     <string name="first_checkbox">Ich habe die AGB und Datenschutzbestimmungen gelesen und akzeptiere diese.</string>
-    <string name="second_checkbox">Ich stimme zu, dass die Video- und Tonaufnahmen der Identifizierung aufgenommen und gespeichert werden.</string>
+    <string name="second_checkbox">Ich stimme zu, dass die Tonaufnahmen der Identifizierung aufgenommen und gespeichert werden.</string>
     <string name="terms">Bitte akzeptieren Sie die Bedingungen<br></br><br></br>
 
 
@@ -172,9 +172,10 @@ Stand: Oktober 2014</string>
     <string name="info_label">InformaAonen</string>
     <string name="connecting">Verbinden...</string>
     <string name="info_call">Rufen Sie uns an bei Problemen oder Fragen</string>
-    <string name="info_info">idvos ist Innovationsführer im Bereich der GwG-konformen online
-    Identifizierung und stellt an sich den Anspruch stets die technisch
-    hochwertigsten Lösungen seinen Kunden zu bieten:</string>
+
+    <string name="info_info">idvos führt online Identifizierungen nach den gesetzlichen
+    Bestimmungen durch. Sie können sich online oder mobil von zu Hause oder unterwegs jeder
+    Zeit identifizieren. Die Sicherheit Ihrer Daten steht dabei im Vordergrund.</string>
     
     <string name="login_label">Anmeldung</string>
     <string name="privacy_text">Datenschutzerklärung

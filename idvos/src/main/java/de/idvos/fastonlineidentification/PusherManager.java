@@ -21,7 +21,7 @@ public class PusherManager implements ConnectionEventListener, PrivateChannelEve
 	
 	private static final String TAG = "PusherManager";
 	
-	private static final String API_KEY = "18573e2f3ef8feec6159";
+	private static final String API_KEY = "1e89dbf47e7ba14986f4";
 	private static final String AUTHORIZATION_URL = IdentificationActivity.SERVER_URL + "pusher/auth";
 
 	private static final String EVENT_SESSION_SHOW_DIALOG = "show_dialog_instruction";

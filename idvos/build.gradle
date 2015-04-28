@@ -34,14 +34,17 @@ android {
 }
 
 dependencies {
-//    compile project(':idvosSDK')
-    compile project(':openTok')
-    compile project(':volley')
+    //    compile project(':idvosSDK')
+    //compile project(':openTok')
+    compile files('lib/opentok-android-sdk-2.5.0.jar')
+    //compile files('lib/armeabi/libopentok.so')
+    //compile files('lib/x86/libopentok.so')
+    //compile project(':volley')
+    compile 'com.mcxiaoke.volley:library:1.+'
     compile 'com.pusher:pusher-java-client:0.3.1'
     compile 'com.android.support:support-v4:21.0.3'
     compile 'com.android.support:appcompat-v7:21.0.3'
     compile 'com.crashlytics.android:crashlytics:1.+'
-
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.daimajia.easing:library:1.0.1@aar'
     compile 'com.daimajia.androidanimations:library:1.1.3@aar'

@@ -41,7 +41,7 @@ public class TokBoxManager implements SessionListener {
 
 	private static final String TAG = "TokBoxManager";
 	
-	private static final String API_KEY = "45083572";
+	private static final String API_KEY = "44880212";
 	private static final String FLASH_MODE_TORCH = "torch";
 	private static final String FLASH_MODE_OFF = "off";
 	

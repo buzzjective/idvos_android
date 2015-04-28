@@ -52,15 +52,15 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:text="idvos bietet die einfachste und bequemste GwG-konforme
-    Identifizierungsmethode. Die Sicherheit Ihrer Daten liegt uns dabei besonders am Herzen."
+                android:text="idvos bietet die einfachste und bequemste GwG-konforme Identifizierungsmethode. Die Sicherheit Ihrer Daten liegt uns dabei besonders am Herzen."
                 android:padding="5dp"
                 android:textSize="12sp"
                 android:textColor="#000000"
                 android:gravity="left"
                 android:textAlignment="gravity"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"/>
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/gwg_text" />
 
 
 
