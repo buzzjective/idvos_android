@@ -69,7 +69,7 @@
                 android:layout_centerVertical="true"
                 android:hint="@string/login_lastname"
                 android:inputType="textPersonName|textCapSentences"
-                android:text="Lloyd"
+                android:text=""
                 />
 
             </RelativeLayout>
@@ -109,7 +109,7 @@
                     android:layout_centerVertical="true"
                     android:hint="@string/login_code"
                     android:inputType="textCapCharacters"
-                    android:text="1DO6X"
+                    android:text=""
                     />
 
             </RelativeLayout>
