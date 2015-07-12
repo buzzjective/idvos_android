@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import de.idvos.fastonlineidentification.sdk.IdentificationResult;
@@ -22,10 +24,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         View button = findViewById(R.id.start_identification_btn);
+        final TextView editText = (TextView) findViewById(R.id.hash_edt);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                IdvosSDK.getInstance().startIdentification(MainActivity.this, REQUEST_CODE, HASH);
+                CharSequence text = editText.getText();
+                if(TextUtils.isEmpty(text)){
+                    return;
+                }
+                IdvosSDK.getInstance().startIdentification(
+                        MainActivity.this,
+                        REQUEST_CODE,
+                        text.toString()
+                );
             }
         });
     }
