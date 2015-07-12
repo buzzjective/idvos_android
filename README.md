@@ -1,6 +1,8 @@
 # idvos Android App
 
-Uses Gradle.
+Folowing instructions are for Gradle. 
+
+For Maven see https://github.com/buzzjective/idvos_android/blob/master/MAVEN.md
 
 ## Dependencies
 
