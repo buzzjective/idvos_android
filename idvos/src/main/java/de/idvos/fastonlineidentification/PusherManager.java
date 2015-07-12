@@ -16,13 +16,11 @@ import com.pusher.client.util.HttpAuthorizer;
 
 import de.idvos.fastonlineidentification.InstructionBar.Instruction;
 import de.idvos.fastonlineidentification.activity.IdentificationActivity;
+import de.idvos.fastonlineidentification.sdk.IdvosSDK;
 
 public class PusherManager implements ConnectionEventListener, PrivateChannelEventListener {
 	
 	private static final String TAG = "PusherManager";
-	
-	private static final String API_KEY = "1e89dbf47e7ba14986f4";
-	private static final String AUTHORIZATION_URL = IdentificationActivity.SERVER_URL + "pusher/auth";
 
 	private static final String EVENT_SESSION_SHOW_DIALOG = "show_dialog_instruction";
 	private static final String EVENT_SHOW_TAN_INSTRUCTION = "show_second_instruction";
@@ -33,7 +31,7 @@ public class PusherManager implements ConnectionEventListener, PrivateChannelEve
 	private static final String EVENT_USER_NOT_VERIFIED = "user_unidentified";
 	
 	private static PusherManager mInstance = null;
-	
+
 	public static interface PusherCallback {
 		
 		public void onPusherConnected();
@@ -79,15 +77,32 @@ public class PusherManager implements ConnectionEventListener, PrivateChannelEve
 		
 		PusherOptions options = new PusherOptions();
 		options.setEncrypted(true);
-		options.setAuthorizer(new HttpAuthorizer(AUTHORIZATION_URL));
+
+		IdvosSDK.Mode mode = IdvosSDK.getInstance().getMode();
+
+		options.setAuthorizer(new HttpAuthorizer(
+				mode.getEndpoint() + "api/v1/mobile/pusher/auth"
+		));
 		
-		mPusher = new Pusher(API_KEY, options);
+		mPusher = new Pusher(mode.getPublicApiKey(), options);
 	}
 
 
     public void disconnect(){
-        if(mPusher != null)
-            mPusher.disconnect();
+        if(mPusher != null) {
+			mPusher.disconnect();
+
+            PusherOptions options = new PusherOptions();
+            options.setEncrypted(true);
+
+            IdvosSDK.Mode mode = IdvosSDK.getInstance().getMode();
+
+            options.setAuthorizer(new HttpAuthorizer(
+                    mode.getEndpoint() + "api/v1/mobile/pusher/auth"
+            ));
+
+            mPusher = new Pusher(mode.getPublicApiKey(), options);
+		}
     }
 	public void connect(String channelName) throws Exception{
 		Log.i(TAG, "Subscribing to channel: " + channelName);

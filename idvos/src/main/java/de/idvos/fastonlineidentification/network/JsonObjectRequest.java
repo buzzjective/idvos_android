@@ -25,7 +25,7 @@ public class JsonObjectRequest extends NetworkRequest<JSONObject> {
 	protected RequestResult run(HttpUriRequest request) {
 		RequestResult result = new RequestResult();
 		
-		HttpClient client = new DefaultHttpClient();
+		HttpClient client = getClient();
 		
 		int statusCode = STATUS_CODE_UNKNOWN;
 		

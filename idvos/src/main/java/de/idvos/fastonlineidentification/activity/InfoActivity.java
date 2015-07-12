@@ -34,18 +34,9 @@ public class InfoActivity extends BaseActivity implements OnClickListener {
 	
 	@Override
 	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.button_call:
-            startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+493020849261")));
-
-            return;
-		/*case R.id.button_facebook:
-			return;
-		case R.id.button_twitter:
-			return;
-		case R.id.button_linkedin:
-			return;*/
+		int id = v.getId();
+		if(id == R.id.button_call) {
+			startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+493020849261")));
 		}
 	}
-	
 }

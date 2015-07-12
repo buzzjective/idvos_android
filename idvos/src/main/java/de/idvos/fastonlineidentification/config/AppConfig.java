@@ -1,45 +1,49 @@
 package de.idvos.fastonlineidentification.config;
 
-import android.app.Application;
+import android.content.Context;
 import android.text.TextUtils;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
-import com.crashlytics.android.Crashlytics;
 
 /**
  * Created by mohammadrezanajafi on 2/2/15.
  */
-public class AppConfig extends Application {
+public class AppConfig {
 
-    private static AppConfig instance = null;
-    private RequestQueue mRequestQueue = null;
     public static final String TAG = "RING_APPLICATION";
 
+    private static Context context = null;
+    private static AppConfig instance = new AppConfig();
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        instance = this;
-        Crashlytics.start(this);
+    private RequestQueue mRequestQueue = null;
 
+    private AppConfig() {
     }
 
-    public static AppConfig getInstance(){
-        if(instance == null){
-            throw new IllegalStateException("Application is not initialized !");
+    public static AppConfig getInstance() {
+        if (instance == null) {
+            throw new IllegalStateException("AppConfig is not initialized");
         }
         return instance;
     }
 
+    public static void initialize(Context context) {
+        if (AppConfig.context != null) {
+            throw new IllegalStateException("AppConfig was already initialized");
+        }
 
+        if (context == null) {
+            throw new NullPointerException("Context can't be null");
+        }
 
+        AppConfig.context = context;
+    }
 
-
-    public RequestQueue getRequestQueue(){
-        if(mRequestQueue == null){
-            mRequestQueue = Volley.newRequestQueue(getApplicationContext());
+    public RequestQueue getRequestQueue() {
+        if (mRequestQueue == null) {
+            mRequestQueue = Volley.newRequestQueue(context);
         }
         return mRequestQueue;
 

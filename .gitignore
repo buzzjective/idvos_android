@@ -1,6 +1,39 @@
-/.idea/
-/.gradle/
-/build/
-/idvos/build/
-/idvos/idvos-release.apk
-/local.properties
+# built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+classes/
+gen/
+tmp/
+target/
+out/
+obj/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+#Intellij IDEA
+*.iml
+.idea
+gen-external-apklibs/
+
+#Eclipse
+.settings/
+.project
+.classpath
+
+#Gradle generated files
+build/
+.gradle
+
+.idea/workspace.xml
+.idea/libraries
+.DS_Store

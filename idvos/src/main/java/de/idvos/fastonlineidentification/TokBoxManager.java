@@ -36,12 +36,13 @@ import com.opentok.android.SubscriberKit.VideoListener;
 
 import de.idvos.fastonlineidentification.sdk.CustomVideoCapturer;
 import de.idvos.fastonlineidentification.sdk.CustomVideoRenderer;
+import de.idvos.fastonlineidentification.sdk.IdvosSDK;
 
 public class TokBoxManager implements SessionListener {
 
 	private static final String TAG = "TokBoxManager";
 	
-	private static final String API_KEY = "44880212";
+//	private static final String API_KEY = "44880212";
 	private static final String FLASH_MODE_TORCH = "torch";
 	private static final String FLASH_MODE_OFF = "off";
 	
@@ -55,7 +56,7 @@ public class TokBoxManager implements SessionListener {
 	}
 	
 	private static TokBoxManager mInstance = null;
-	
+
 	public static TokBoxManager getInstance(Context context, TokBoxCallback callback) {
 		if (mInstance==null) {
 			mInstance = new TokBoxManager(context, callback);
@@ -97,7 +98,11 @@ public class TokBoxManager implements SessionListener {
     public void connect(Context context, String sessionId, String token) {
 
 		
-		mSession = new Session(context, API_KEY, sessionId);
+		mSession = new Session(
+				context,
+				IdvosSDK.getInstance().getMode().getTokBoxApiKey(),
+				sessionId
+		);
 		mSession.setSessionListener(this);
 		mSession.connect(token);
 	}
@@ -107,6 +112,8 @@ public class TokBoxManager implements SessionListener {
             mSession.disconnect();
             mSession = null;
         }
+
+        mInstance = null;
     }
 	public void swapCamera() {
         CustomVideoCapturer customVideoCapturer = (CustomVideoCapturer)mPublisher.getCapturer();

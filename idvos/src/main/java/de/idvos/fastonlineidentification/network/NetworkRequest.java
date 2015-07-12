@@ -4,11 +4,23 @@ import java.io.UnsupportedEncodingException;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpRequest;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.client.methods.HttpUriRequest;
+import org.apache.http.conn.scheme.Scheme;
+import org.apache.http.conn.scheme.SchemeRegistry;
+import org.apache.http.conn.ssl.SSLSocketFactory;
+import org.apache.http.conn.ssl.X509HostnameVerifier;
 import org.apache.http.entity.StringEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.conn.SingleClientConnManager;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+
+import de.idvos.fastonlineidentification.sdk.IdvosSDK;
 
 public abstract class NetworkRequest<T> {
 
@@ -101,6 +113,27 @@ public abstract class NetworkRequest<T> {
 		if (mContentType!=null) {
 			request.addHeader("Content-Type", getContentType());
 		}
+	}
+
+	protected HttpClient getClient() {
+		IdvosSDK.Mode mode = IdvosSDK.getInstance().getMode();
+		if (mode == IdvosSDK.Mode.PRODUCTION) {
+			return new DefaultHttpClient();
+		}
+
+		HostnameVerifier hostnameVerifier = org.apache.http.conn.ssl.SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER;
+
+		DefaultHttpClient client = new DefaultHttpClient();
+
+		SchemeRegistry registry = new SchemeRegistry();
+		SSLSocketFactory socketFactory = SSLSocketFactory.getSocketFactory();
+		socketFactory.setHostnameVerifier((X509HostnameVerifier) hostnameVerifier);
+		registry.register(new Scheme("https", socketFactory, 443));
+		SingleClientConnManager mgr = new SingleClientConnManager(client.getParams(), registry);
+		DefaultHttpClient httpClient = new DefaultHttpClient(mgr, client.getParams());
+
+		HttpsURLConnection.setDefaultHostnameVerifier(hostnameVerifier);
+		return httpClient;
 	}
 	
 }

@@ -18,6 +18,7 @@ import de.idvos.fastonlineidentification.network.NetworkRequest;
 import de.idvos.fastonlineidentification.network.VoidRequest;
 import de.idvos.fastonlineidentification.network.VoidRequest.VoidRequestResultCallback;
 import de.idvos.fastonlineidentification.network.ZStringRequest;
+import de.idvos.fastonlineidentification.sdk.IdvosSDK;
 import de.idvos.fastonlineidentification.view.ProgressBarDeterminate;
 import de.idvos.fastonlineidentification.view.TANInput;
 import de.idvos.fastonlineidentification.view.TANInput.OnCheckTANListener;
@@ -54,7 +55,6 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
 
 	private static final String TAG = "IdentificationActivity";
 	
-	public static final String SERVER_URL = "https://idvos.de/api/v1/mobile/";
     public String tmp = "";
 	private static final String TAN_CODE = "tan_code";
 	
@@ -81,14 +81,13 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
 
     ProgressBarDeterminate mProgressBarDeterminate;
 
+	private String serverUrl;
 
     protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
-
 		setContentView(R.layout.activity_identification);
 
-
+		serverUrl = IdvosSDK.getInstance().getMode().getEndpoint() + "api/v1/mobile/";
 
 
 		setMenuButton(R.drawable.ic_action_navigation_close, true);
@@ -180,12 +179,13 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
 	@Override
 	public void onClick(View v) {
 		TokBoxManager manager = TokBoxManager.getInstance(this, this);
-		
-		switch (v.getId()) {
-		case R.id.button_swap_camera:
+
+		int id = v.getId();
+		if(id == R.id.button_swap_camera) {
 			manager.swapCamera();
 			return;
-		case R.id.button_swap_light:
+		}
+		if(id == R.id.button_swap_light){
             if(manager.isFrontCam()){
                 Toast.makeText(IdentificationActivity.this,"Front cam has no flash light!",Toast.LENGTH_SHORT).show();
 
@@ -253,7 +253,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
 
 	private void signalReady() {
 		VoidRequest request = new VoidRequest(
-				SERVER_URL + "identifications/ready",
+				serverUrl + "identifications/ready",
 				NetworkRequest.METHOD_PUT,
 				new VoidRequestResultCallback() {
 			
@@ -409,7 +409,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
 		mTANInput.setLoading();
 		
 		JsonObjectRequest request = new JsonObjectRequest(
-				SERVER_URL + "identifications/" + mProgress.getIdentificationHash() + "/check",
+				serverUrl + "identifications/" + mProgress.getIdentificationHash() + "/check",
 				NetworkRequest.METHOD_PUT,
 				new JsonObjectRequestCallback() {
 					
@@ -507,10 +507,10 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
 		followProgress();
 	}
 
-	private void flowStart() {
+    private void flowStart() {
 
 
-        StringRequest request = new StringRequest(Request.Method.PUT,SERVER_URL + "identifications",new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.PUT,serverUrl + "identifications",new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.i(TAG, response);
@@ -613,5 +613,16 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
 //		} catch (JSONException e) { }
 //		mRequestQueue.addRequestToQueue(request);
 	}
-	
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        try {
+            PusherManager.getInstance(this).disconnect();
+            TokBoxManager.getInstance(this, this).finishSession();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

@@ -27,6 +27,7 @@ import de.idvos.fastonlineidentification.R;
 import de.idvos.fastonlineidentification.config.AppConfig;
 import de.idvos.fastonlineidentification.network.JsonObjectRequest;
 import de.idvos.fastonlineidentification.network.NetworkRequest;
+import de.idvos.fastonlineidentification.sdk.IdvosSDK;
 
 /**
  * Created by mohammadrezanajafi on 2/3/15.
@@ -59,7 +60,8 @@ public class SummaryActivity extends BaseActivity {
 
     private void startAPICall(String idHash){
         summaryProgressBar.setVisibility(View.VISIBLE);
-        StringRequest request = new StringRequest(Request.Method.GET,IdentificationActivity.SERVER_URL + "identifications/" + idHash + "/summary",new Response.Listener<String>() {
+        String serverUrl = IdvosSDK.getInstance().getMode().getEndpoint() + "api/v1/mobile/";
+        StringRequest request = new StringRequest(Request.Method.GET,serverUrl + "identifications/" + idHash + "/summary",new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 

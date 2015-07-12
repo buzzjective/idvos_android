@@ -1,4 +1,2 @@
-include ':idvosSDK'
-include ':openTok'
-include ':volley'
+include ':example'
 include ':idvos'

@@ -1,11 +1,5 @@
 package de.idvos.fastonlineidentification.activity;
 
-import de.idvos.fastonlineidentification.InstructionBar;
-import de.idvos.fastonlineidentification.PusherManager;
-import de.idvos.fastonlineidentification.R;
-import de.idvos.fastonlineidentification.TokBoxManager;
-import de.idvos.fastonlineidentification.config.AppConfig;
-
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -32,24 +26,33 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LoginActivity extends BaseActivity implements OnClickListener,PusherManager.PusherCallback,TokBoxManager.TokBoxCallback {
+import de.idvos.fastonlineidentification.InstructionBar;
+import de.idvos.fastonlineidentification.PusherManager;
+import de.idvos.fastonlineidentification.R;
+import de.idvos.fastonlineidentification.TokBoxManager;
+import de.idvos.fastonlineidentification.config.AppConfig;
+import de.idvos.fastonlineidentification.sdk.IdvosSDK;
 
-	protected static Intent getIntent(Context context, Progress progress) {
-		Intent intent = new Intent(context, LoginActivity.class);
-		intent.putExtra(Progress.KEY_IDENTIFICATION_PROGRESS, progress);
-		return intent;
-	}
+public class LoginActivity extends BaseActivity implements OnClickListener, PusherManager.PusherCallback, TokBoxManager.TokBoxCallback {
+
+    private String serverUrl;
+
+    protected static Intent getIntent(Context context, Progress progress) {
+        Intent intent = new Intent(context, LoginActivity.class);
+        intent.putExtra(Progress.KEY_IDENTIFICATION_PROGRESS, progress);
+        return intent;
+    }
 
     private static final String TAG = "LoginActivity";
 
 
     private View mButtonLastNameInfo;
-	private View mButtonCodeInfo;
-	private View mButtonStart;
-	private EditText mEditLastName;
-	private EditText mEditCode;
-	
-	private Progress mProgress;
+    private View mButtonCodeInfo;
+    private View mButtonStart;
+    private EditText mEditLastName;
+    private EditText mEditCode;
+
+    private Progress mProgress;
     private ProgressDialog mProgressDialog;
 
 
@@ -57,24 +60,27 @@ public class LoginActivity extends BaseActivity implements OnClickListener,Pushe
     Runnable mRunnable;
 
     @Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_login);
-		
-		mButtonLastNameInfo = findViewById(R.id.button_info_lastname);
-		mButtonCodeInfo = findViewById(R.id.button_info_code);
-		mButtonStart = findViewById(R.id.button_start);
-		mEditLastName = (EditText) findViewById(R.id.edit_lastname);
-		mEditCode = (EditText) findViewById(R.id.edit_code);
-		
-		mButtonLastNameInfo.setOnClickListener(this);
-		mButtonCodeInfo.setOnClickListener(this);
-		mButtonStart.setOnClickListener(this);
-		
-		setMenuButton(R.drawable.ic_action_bac, true);
-		
-		Intent intent = getIntent();
-		mProgress = intent.getParcelableExtra(Progress.KEY_IDENTIFICATION_PROGRESS);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        serverUrl = IdvosSDK.getInstance().getMode().getEndpoint() + "api/v1/mobile/";
+
+        setContentView(R.layout.activity_login);
+
+        mButtonLastNameInfo = findViewById(R.id.button_info_lastname);
+        mButtonCodeInfo = findViewById(R.id.button_info_code);
+        mButtonStart = findViewById(R.id.button_start);
+        mEditLastName = (EditText) findViewById(R.id.edit_lastname);
+        mEditCode = (EditText) findViewById(R.id.edit_code);
+
+        mButtonLastNameInfo.setOnClickListener(this);
+        mButtonCodeInfo.setOnClickListener(this);
+        mButtonStart.setOnClickListener(this);
+
+        setMenuButton(R.drawable.ic_action_bac, true);
+
+        Intent intent = getIntent();
+        mProgress = intent.getParcelableExtra(Progress.KEY_IDENTIFICATION_PROGRESS);
 
 
         mProgressDialog = new ProgressDialog(this);
@@ -94,55 +100,53 @@ public class LoginActivity extends BaseActivity implements OnClickListener,Pushe
             @Override
             public void run() {
                 mProgressDialog.dismiss();
-                Toast.makeText(LoginActivity.this,"Failed to connect to server in proper time",Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this, "Failed to connect to server in proper time", Toast.LENGTH_LONG).show();
                 setResult(RESULT_CANCELED);
                 finish();
 
             }
         };
 
-	}
+    }
 
-	@Override
-	protected void onLeftMenuButtonClicked() {
-		onBackPressed();
-	}
-	
-	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.button_info_lastname:
+    @Override
+    protected void onLeftMenuButtonClicked() {
+        onBackPressed();
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        if (id == R.id.button_info_lastname) {
             Toast.makeText(LoginActivity.this, "Bitte geben Sie Ihren Nachnamen an", Toast.LENGTH_SHORT).show();
-
             return;
-		case R.id.button_info_code:
-            Toast.makeText(LoginActivity.this,"Bitte geben Sie Ihre Referenznummer an, welche Sie per E-Mail oder durch unseren Partner erhalten haben",Toast.LENGTH_SHORT).show();
+        }
 
+        if (id == R.id.button_info_code) {
+            Toast.makeText(LoginActivity.this, "Bitte geben Sie Ihre Referenznummer an, welche Sie per E-Mail oder durch unseren Partner erhalten haben", Toast.LENGTH_SHORT).show();
             return;
-		case R.id.button_start:
+        }
 
-            mHandler.postDelayed(mRunnable, 2* 60 * 1000);
+        if (id == R.id.button_start) {
+            mHandler.postDelayed(mRunnable, 2 * 60 * 1000);
 
             PusherManager.getInstance(this).disconnect();
-            TokBoxManager.getInstance(this,this).finishSession();
+            TokBoxManager.getInstance(this, this).finishSession();
 
             String lastName = mEditLastName.getText().toString().trim();
-			String shortCode = mEditCode.getText().toString().trim();
+            String shortCode = mEditCode.getText().toString().trim();
 
-            if(lastName.equals("") || shortCode.equals("")){
+            if (lastName.equals("") || shortCode.equals("")) {
                 AlertDialog.Builder alertBuilder = new AlertDialog.Builder(LoginActivity.this);
-                alertBuilder.setMessage("Ihre Anmeldedaten sind leider nicht korrekt").setPositiveButton("OK",null).setCancelable(true).create().show();
+                alertBuilder.setMessage("Ihre Anmeldedaten sind leider nicht korrekt").setPositiveButton("OK", null).setCancelable(true).create().show();
                 return;
             }
 
             mProgress.setIdentificationWithCode(lastName, shortCode);
             mState = Progress.STATE_START;
             followProgress();
-
-
-
-		}
-	}
+        }
+    }
 
     private int mState;
 
@@ -154,30 +158,30 @@ public class LoginActivity extends BaseActivity implements OnClickListener,Pushe
 
                 mProgressDialog.show();
                 flowStart();
-                Log.e("LoginActivity","Progress.STATE_START");
+                Log.e("LoginActivity", "Progress.STATE_START");
                 return;
             case Progress.STATE_IDENTIFICATION_RETRIEVED:
-                Log.e("LoginActivity","STATE_IDENTIFICATION_RETRIEVED");
+                Log.e("LoginActivity", "STATE_IDENTIFICATION_RETRIEVED");
 
                 startPusher();
 
                 return;
             case Progress.STATE_CONNECTING_TO_PUSHER:
-                Log.e("LoginActivity","STATE_CONNECTING_TO_PUSHER");
+                Log.e("LoginActivity", "STATE_CONNECTING_TO_PUSHER");
 
                 return;
             case Progress.STATE_CONNECTED_TO_PUSHER:
-                Log.e("LoginActivity","STATE_CONNECTED_TO_PUSHER");
+                Log.e("LoginActivity", "STATE_CONNECTED_TO_PUSHER");
 
                 startTokBox();
                 return;
             case Progress.STATE_CONNECTING_TO_TOKBOX:
-                Log.e("LoginActivity","STATE_CONNECTING_TO_TOKBOX");
+                Log.e("LoginActivity", "STATE_CONNECTING_TO_TOKBOX");
 
 //                mTextFlow.setText("Verbindung herstellen...");
                 return;
             case Progress.STATE_CONNECTED_TO_TOKBOX:
-                Log.e("LoginActivity","STATE_CONNECTED_TO_TOKBOX");
+                Log.e("LoginActivity", "STATE_CONNECTED_TO_TOKBOX");
 
                 mHandler.removeCallbacks(mRunnable);
                 mHandler.removeCallbacksAndMessages(null);
@@ -192,11 +196,11 @@ public class LoginActivity extends BaseActivity implements OnClickListener,Pushe
                 return;
 
             case Progress.STATE_FAILED:
-                Log.e("LoginActivity","STATE_FAILED");
+                Log.e("LoginActivity", "STATE_FAILED");
                 mHandler.removeCallbacks(mRunnable);
 
                 mProgressDialog.dismiss();
-                Toast.makeText(LoginActivity.this,"Failed :-(",Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Failed :-(", Toast.LENGTH_SHORT).show();
                 return;
         }
     }
@@ -204,7 +208,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener,Pushe
     private void flowStart() {
 
 
-        StringRequest request = new StringRequest(Request.Method.PUT,IdentificationActivity.SERVER_URL + "identifications",new Response.Listener<String>() {
+        StringRequest request = new StringRequest(Request.Method.PUT, serverUrl + "identifications", new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Log.i(TAG, response);
@@ -221,7 +225,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener,Pushe
 
                 followProgress();
             }
-        },new Response.ErrorListener() {
+        }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
@@ -230,16 +234,16 @@ public class LoginActivity extends BaseActivity implements OnClickListener,Pushe
                 followProgress();
 
             }
-        }){
+        }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> paramsMap = new HashMap<>();
+                Map<String, String> paramsMap = new HashMap<>();
                 mProgress.addRetrieveIdentification(paramsMap);
                 return paramsMap;
             }
         };
 
-        AppConfig.getInstance().getRequestQueue().getCache().invalidate(IdentificationActivity.SERVER_URL + "identifications",true);
+        AppConfig.getInstance().getRequestQueue().getCache().invalidate(serverUrl + "identifications", true);
         AppConfig.getInstance().addToRequestQueue(request);
         mState = Progress.STATE_RETRIEVING_IDENTIFICATION;
     }
@@ -278,7 +282,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener,Pushe
     public void onPusherChannelAuthenticationFailure(String message, Exception e) {
         e.printStackTrace();
         mProgressDialog.dismiss();
-        Toast.makeText(LoginActivity.this,"Pusher failed to connect",Toast.LENGTH_SHORT).show();
+        Toast.makeText(LoginActivity.this, "Pusher failed to connect", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -340,7 +344,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener,Pushe
         Toast.makeText(LoginActivity.this, "Tokbox failed to connect", Toast.LENGTH_SHORT).show();
 
         try {
-            TokBoxManager.getInstance(this,this).finishSession();
+            TokBoxManager.getInstance(this, this).finishSession();
         } catch (Exception e1) {
             e1.printStackTrace();
         }
