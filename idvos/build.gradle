@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'crashlytics'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group='com.github.buzzjective'
 
 android {
     compileSdkVersion 21
@@ -16,6 +19,15 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
+}
+
+// build a jar with source files
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+artifacts {
+    archives sourcesJar
 }
 
 dependencies {
