@@ -21,7 +21,7 @@ Add those dependencies to root build.gradle buildscript:
         classpath 'com.crashlytics.tools.gradle:crashlytics-gradle:1.+'
     }
 
-Add those dependencies to root build.gradle allprojects:
+And those to root build.gradle allprojects:
 
     repositories {
         maven { url "https://jitpack.io" }
@@ -31,9 +31,29 @@ Add those dependencies to root build.gradle allprojects:
 
 ## SDK Setup
 
-Initialize the SDK before using and choose mode of operating(either Mode.TEST or Mode.PRODUCTION):
+Initialize the SDK before using and choose mode of operating(either `Mode.TEST` or `Mode.PRODUCTION`):
 
-IdvosSDK.initialize(this, IdvosSDK.Mode.TEST);
+    public class ExampleApplication extends Application {
+        @Override
+        public void onCreate() {
+            super.onCreate();
+            IdvosSDK.initialize(this, IdvosSDK.Mode.PRODUCTION);
+       }
+    }
+
+## SDK Usage
 
 Pass your identification hash in order to start identification process:
-IdvosSDK.getInstance().startIdentification(this, 100, "mxqC1jsvV4uaL_zRtFn7");
+
+    IdvosSDK.getInstance().startIdentification(this, REQUEST_CODE, USER_HASHCODE);
+
+You'll recive a result in `onActivityResult`
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode != REQUEST_CODE || resultCode != RESULT_OK){
+            return;
+        }
+        IdentificationResult result = data.getParcelableExtra(IdentificationResult.IDENTIFICATION_RESULT);
+    }
