@@ -4,6 +4,8 @@ Folowing instructions are for Gradle.
 
 For Maven see https://github.com/buzzjective/idvos_android/blob/master/MAVEN.md
 
+For Eclipse see https://github.com/buzzjective/idvos_android/blob/master/ECLIPSE.md
+
 ## Dependencies
 
 Add this code to your module’s build.gradle
