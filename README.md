@@ -13,7 +13,7 @@ Add this code to your module’s build.gradle
     apply plugin: 'crashlytics'
 
     dependencies {
-        compile 'com.github.buzzjective:idvos_android:0.3'
+        compile 'com.github.buzzjective:idvos_android:0.4'
     }
 
 Add those dependencies to root build.gradle buildscript:
