@@ -61,3 +61,15 @@ You'll recive a result in `onActivityResult`
         }
         IdentificationResult result = data.getParcelableExtra(IdentificationResult.IDENTIFICATION_RESULT);
     }
+
+Possible ERROR_CODES:
+    
+    FAIL_REASON_INVALID_IDENTIFICATION = 0;
+    FAIL_REASON_INVALID_INPUT = 1;
+    FAIL_REASON_SERVER_ERROR = 2;
+    FAIL_REASON_OTHER = 3;
+    FAIL_REASON_PUSHER_AUTHENTICATION = 4;
+    FAIL_REASON_TOKBOX_ERROR = 5;
+    FAIL_REASON_INVALID_P2P_SESSION_ID = 6;
+    FAIL_REASON_UNVERIFIED = 7;
+	
