@@ -31,7 +31,7 @@ import de.idvos.fastonlineidentification.InstructionBar;
 import de.idvos.fastonlineidentification.InstructionBar.Instruction;
 import de.idvos.fastonlineidentification.PusherManager;
 import de.idvos.fastonlineidentification.PusherManager.PusherCallback;
-import de.idvos.fastonlineidentification.R;
+import de.idvos.fastonlineidentification.sdk.R;
 import de.idvos.fastonlineidentification.TokBoxManager;
 import de.idvos.fastonlineidentification.TokBoxManager.TokBoxCallback;
 import de.idvos.fastonlineidentification.config.AppConfig;
@@ -97,7 +97,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
         mFrameRecieve = (RelativeLayout) findViewById(R.id.frame_recieve);
         mFrameRecieveTV = (TextView) findViewById(R.id.frame_receive_tv);
 
-        mTANInput = (TANInput) findViewById(R.id.tan);
+        mTANInput = (TANInput) findViewById(de.idvos.fastonlineidentification.sdk.R.id.tan);
         mTANInput.setOnCheckTANListener(this);
 
         findViewById(R.id.button_swap_camera).setOnClickListener(this);
@@ -151,7 +151,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
     @Override
     protected void onRightMenuButtonClicked() {
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
-        alertBuilder.setTitle(R.string.identification_cancel_title).setMessage(R.string.identification_cancel_message).setPositiveButton(R.string.identification_cancel_positive, new DialogInterface.OnClickListener() {
+        alertBuilder.setTitle(R.string.identification_cancel_title).setMessage(de.idvos.fastonlineidentification.sdk.R.string.identification_cancel_message).setPositiveButton(R.string.identification_cancel_positive, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+493020849261")));

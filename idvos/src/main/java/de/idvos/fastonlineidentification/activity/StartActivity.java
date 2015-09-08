@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
-import de.idvos.fastonlineidentification.R;
+import de.idvos.fastonlineidentification.sdk.R;
 import de.idvos.fastonlineidentification.sdk.IdentificationResult;
 import de.idvos.fastonlineidentification.sdk.IdvosFOI;
 import de.idvos.fastonlineidentification.sdk.IdvosSDK;
@@ -33,8 +33,8 @@ public class StartActivity extends BaseActivity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start);
-        setTitle(R.string.start_title);
+        setContentView(de.idvos.fastonlineidentification.sdk.R.layout.activity_start);
+        setTitle(de.idvos.fastonlineidentification.sdk.R.string.start_title);
         setMenuButton(R.drawable.ic_action_helpbutton, false);
 
         Intent intent = getIntent();
@@ -48,7 +48,7 @@ public class StartActivity extends BaseActivity implements OnClickListener {
 //		terms.setText(Html.fromHtml("<a href=\"www.google.com\">" + getString(R.string.start_terms) + "</a>"));
 //		terms.setOnClickListener(this);
 
-        findViewById(R.id.button_start).setOnClickListener(this);
+        findViewById(de.idvos.fastonlineidentification.sdk.R.id.button_start).setOnClickListener(this);
 
 
         String firstText = getString(R.string.first_checkbox);

@@ -8,9 +8,8 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.view.View;
-import android.widget.RelativeLayout;
 
-import de.idvos.fastonlineidentification.R;
+import de.idvos.fastonlineidentification.sdk.R;
 
 
 public class ProgressBarDeterminate extends CustomView {

@@ -1,9 +1,9 @@
 package de.idvos.fastonlineidentification.view;
 
-import de.idvos.fastonlineidentification.R;
+import de.idvos.fastonlineidentification.sdk.R;
+
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.inputmethodservice.Keyboard;
 import android.os.Build;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,10 +15,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.TextView;
-
-import java.util.logging.Handler;
-import java.util.logging.Logger;
 
 public class TANInput extends FrameLayout {
 
@@ -82,7 +78,7 @@ public class TANInput extends FrameLayout {
 		inflater.inflate(R.layout.view_taninput, this, true);
 		
 		mDigits = new EditText[5];
-		mDigits[0] = (EditText) findViewById(R.id.digit_1);
+		mDigits[0] = (EditText) findViewById(de.idvos.fastonlineidentification.sdk.R.id.digit_1);
 		mDigits[1] = (EditText) findViewById(R.id.digit_2);
 		mDigits[2] = (EditText) findViewById(R.id.digit_3);
 		mDigits[3] = (EditText) findViewById(R.id.digit_4);

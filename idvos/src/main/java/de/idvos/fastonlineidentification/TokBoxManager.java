@@ -1,27 +1,20 @@
 package de.idvos.fastonlineidentification;
 
-import java.io.IOException;
 import java.lang.reflect.Method;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.hardware.Camera;
-import android.hardware.Camera.Parameters;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 //import com.opentok.android.BaseVideoCapturer;
 //import com.opentok.android.BaseVideoRenderer;
-import com.opentok.android.BaseVideoCapturer;
 import com.opentok.android.BaseVideoRenderer;
 import com.opentok.android.OpentokError;
 import com.opentok.android.Publisher;
@@ -35,8 +28,8 @@ import com.opentok.android.Subscriber;
 import com.opentok.android.SubscriberKit.VideoListener;
 
 import de.idvos.fastonlineidentification.sdk.CustomVideoCapturer;
-import de.idvos.fastonlineidentification.sdk.CustomVideoRenderer;
 import de.idvos.fastonlineidentification.sdk.IdvosSDK;
+import de.idvos.fastonlineidentification.sdk.R;
 
 public class TokBoxManager implements SessionListener {
 
@@ -126,7 +119,7 @@ public class TokBoxManager implements SessionListener {
             }
         }catch (Exception ex){
             ex.printStackTrace();
-            Toast.makeText(mContext,R.string.connection_failed_try_again,Toast.LENGTH_LONG).show();
+            Toast.makeText(mContext, R.string.connection_failed_try_again,Toast.LENGTH_LONG).show();
         }
 
 //        if(mPublisher != null)
