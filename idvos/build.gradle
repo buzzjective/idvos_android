@@ -33,7 +33,7 @@ artifacts {
 dependencies {
     //    compile project(':idvosSDK')
     //compile project(':openTok')
-    compile files('lib/opentok-android-sdk-2.5.0.jar')
+    compile files('lib/opentok-android-sdk.jar')
     //compile files('lib/armeabi/libopentok.so')
     //compile files('lib/x86/libopentok.so')
     //compile project(':volley')
