@@ -12,6 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TextView;
 
+import de.idvos.fastonlineidentification.sdk.R;
+
 public class InstructionBar {
 	
 	private static final String DIALOG_ID = "show_dialog_inst_id";
@@ -124,7 +126,7 @@ public class InstructionBar {
     public void hideMask(){
         for (int i = 0; i < mWindowMask.getChildCount(); i++) {
             View currentChild = mWindowMask.getChildAt(i);
-            if(currentChild.getId() != R.id.tan && currentChild.getId() != R.id.cam_window)
+            if(currentChild.getId() != R.id.tan && currentChild.getId() != de.idvos.fastonlineidentification.sdk.R.id.cam_window)
                 currentChild.setBackgroundColor(Color.TRANSPARENT);
         }
 

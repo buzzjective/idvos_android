@@ -28,7 +28,7 @@ import java.util.Map;
 
 import de.idvos.fastonlineidentification.InstructionBar;
 import de.idvos.fastonlineidentification.PusherManager;
-import de.idvos.fastonlineidentification.R;
+import de.idvos.fastonlineidentification.sdk.R;
 import de.idvos.fastonlineidentification.TokBoxManager;
 import de.idvos.fastonlineidentification.config.AppConfig;
 import de.idvos.fastonlineidentification.sdk.IdvosSDK;
@@ -65,7 +65,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener, Push
 
         serverUrl = IdvosSDK.getInstance().getMode().getEndpoint() + "api/v1/mobile/";
 
-        setContentView(R.layout.activity_login);
+        setContentView(de.idvos.fastonlineidentification.sdk.R.layout.activity_login);
 
         mButtonLastNameInfo = findViewById(R.id.button_info_lastname);
         mButtonCodeInfo = findViewById(R.id.button_info_code);

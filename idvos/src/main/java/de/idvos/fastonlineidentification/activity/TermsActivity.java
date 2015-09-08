@@ -1,11 +1,11 @@
 package de.idvos.fastonlineidentification.activity;
 
-import de.idvos.fastonlineidentification.R;
+import de.idvos.fastonlineidentification.sdk.R;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.webkit.WebView;
-import android.widget.TextView;
 
 public class TermsActivity extends BaseActivity {
 

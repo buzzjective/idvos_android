@@ -1,6 +1,7 @@
 package de.idvos.fastonlineidentification.activity;
 
-import de.idvos.fastonlineidentification.R;
+import de.idvos.fastonlineidentification.sdk.R;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -23,7 +24,7 @@ public class VerificationResultActivity extends Activity implements OnClickListe
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_verificationresult);
+		setContentView(de.idvos.fastonlineidentification.sdk.R.layout.activity_verificationresult);
 		
 		Intent intent = getIntent();
 		Progress progress = intent.getParcelableExtra(Progress.KEY_IDENTIFICATION_PROGRESS);

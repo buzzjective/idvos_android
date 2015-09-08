@@ -2,16 +2,13 @@ package de.idvos.fastonlineidentification.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -20,13 +17,8 @@ import com.android.volley.toolbox.StringRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import de.idvos.fastonlineidentification.R;
+import de.idvos.fastonlineidentification.sdk.R;
 import de.idvos.fastonlineidentification.config.AppConfig;
-import de.idvos.fastonlineidentification.network.JsonObjectRequest;
-import de.idvos.fastonlineidentification.network.NetworkRequest;
 import de.idvos.fastonlineidentification.sdk.IdvosSDK;
 
 /**
