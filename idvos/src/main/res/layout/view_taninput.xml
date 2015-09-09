@@ -89,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/taninput_status_margin_top"
             android:layout_marginBottom="@dimen/taninput_status_margin_bottom"
-            android:text="Bestätigen"
+            android:text="@string/taninput_verify"
             android:textSize="@dimen/taninput_status_text_size"
             android:padding="5dp"
             style="@style/button"

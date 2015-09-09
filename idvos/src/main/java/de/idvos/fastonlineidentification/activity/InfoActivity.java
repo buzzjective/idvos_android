@@ -37,7 +37,7 @@ public class InfoActivity extends BaseActivity implements OnClickListener {
 	public void onClick(View v) {
 		int id = v.getId();
 		if(id == R.id.button_call) {
-			startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+493020849261")));
+			startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(getString(R.string.phone))));
 		}
 	}
 }

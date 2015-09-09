@@ -61,19 +61,19 @@ public class SummaryActivity extends BaseActivity {
                     JSONObject jsonObject = new JSONObject(response);
 //                    addRow("title",jsonObject.getString("title"));
 //                    addRow("address_title",jsonObject.getString("address_title"));
-                    addRow("Mobiltelefon",jsonObject.getString("mobile_phone"));
-                    addRow("E-Mail",jsonObject.getString("email"));
-                    addRow("Vorname(n)",jsonObject.getString("name"));
-                    addRow("Nachname",jsonObject.getString("surname"));
+                    addRow(getString(R.string.response_phone),jsonObject.getString("mobile_phone"));
+                    addRow(getString(R.string.response_mail),jsonObject.getString("email"));
+                    addRow(getString(R.string.response_name),jsonObject.getString("name"));
+                    addRow(getString(R.string.response_surname),jsonObject.getString("surname"));
 
-                    addRow("Geburtstag",jsonObject.getString("date_of_birth"));
-                    addRow("Geburtsort",jsonObject.getString("place_of_birth"));
-                    addRow("Staatsangehörigkeit",jsonObject.getString("nationality"));
-                    addRow("Adresse",jsonObject.getString("address"));
-                    addRow("Wohnort",jsonObject.getString("city"));
-                    addRow("Postleitzahl",jsonObject.getString("postal_code"));
-                    addRow("Geschlecht",jsonObject.getString("gender"));
-                    addRow("Land",jsonObject.getString("country"));
+                    addRow(getString(R.string.response_date_of_birth),jsonObject.getString("date_of_birth"));
+                    addRow(getString(R.string.response_place_of_birth),jsonObject.getString("place_of_birth"));
+                    addRow(getString(R.string.response_nationality),jsonObject.getString("nationality"));
+                    addRow(getString(R.string.response_address),jsonObject.getString("address"));
+                    addRow(getString(R.string.response_city),jsonObject.getString("city"));
+                    addRow(getString(R.string.response_post_code),jsonObject.getString("postal_code"));
+                    addRow(getString(R.string.response_gender),jsonObject.getString("gender"));
+                    addRow(getString(R.string.response_country),jsonObject.getString("country"));
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

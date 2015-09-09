@@ -22,9 +22,9 @@ public class TermsActivity extends BaseActivity {
 
         if(getIntent().getIntExtra("text",-1) > 0){
             ((WebView)findViewById(R.id.webview)).loadUrl("file:///android_asset/daten.html");
-            setTitle("Datenschutz");
+            setTitle(getString(R.string.privacy_title));
         }else{
-            setTitle("AGB");
+            setTitle(getString(R.string.terms_and_conditions));
             ((WebView)findViewById(R.id.webview)).loadUrl("file:///android_asset/bitten.html");
         }
 
