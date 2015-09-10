@@ -174,7 +174,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Wir bitten um ein wenig Geduld. Ihre Identifizierung wird gleich gestartet.."/>
+            android:text="@string/please_wait"/>
 
     </RelativeLayout>
 

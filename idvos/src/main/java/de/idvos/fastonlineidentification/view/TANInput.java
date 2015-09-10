@@ -141,7 +141,7 @@ public class TANInput extends FrameLayout {
                     @Override
                     public void run() {
                         setInputEnabled(true);
-                        mTextStatus.setText("Versuchen Sie es erneut");
+                        mTextStatus.setText(R.string.taninput_invalid);
                     }
                 }, 5000);
             }

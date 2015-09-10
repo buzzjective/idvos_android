@@ -27,7 +27,7 @@
             android:layout_centerHorizontal="true"
             android:textSize="@dimen/login_title_text_size"
             android:textColor="@color/login_title_text_color"
-            android:text="Bitte geben Sie Ihre Anmeldedaten ein:"/>
+            android:text="@string/login_title"/>
 
         <LinearLayout
             android:id="@+id/inputs"
