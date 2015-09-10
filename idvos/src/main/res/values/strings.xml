@@ -1,252 +1,41 @@
 <resources>
 
     <string name="app_name">idvos Identifizierung</string>
-    
     <string name="start_title">Willkommen</string>
     <string name="start_accept">Weiter</string>
-    <string name="start_terms">Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</string>
-    <string name="start_terms_desc">Lorem ipsum</string>
-    <string name="start_info">lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem.</string>
-    <!--<string name="start_info">Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem Lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem.\nLorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem.</string>-->
-
-    <string name="terms_label">Terms</string>
-    <string name="start_items">
-        <ul style="list-style-type:disc">
- <li>Keine Weitergabe Ihrer Daten an Externe \n</li>
- <li> Übermittlung der Daten nur auf deutschen Servern \n</li>
- <li> Einhaltung höchster Sicherheitsstandards</li>
-</ul>
-    </string>
+    <string name="terms_label">Bedingungen</string>
     <string name="first_checkbox">Ich habe die AGB und Datenschutzbestimmungen gelesen und akzeptiere diese.</string>
     <string name="second_checkbox">Ich stimme zu, dass die Tonaufnahmen der Identifizierung aufgenommen und gespeichert werden.</string>
-    <string name="terms">Bitte akzeptieren Sie die Bedingungen<br></br><br></br>
-
-
-
-<b>I. ALLGEMEINES</b><br></br>
-
-a. Diese allgemeinen Geschäftsbedingungen („AGB“) gelten gegenüber den Nutzern des idvos-Service.<br></br>
-
-b. Die idvos GmbH („idvos“) erbringt gegenüber Nutzern des Identifizierungs-Service eine Identitätsfeststellung und Altersverifikation nach Maßgabe dieser AGB.<br></br>
-
-c. Diese AGB gelten ausschließlich. Etwaige entgegenstehende oder abweichende allgemeine Geschäftsbedingungen werden nur Vertragsbestandteil, soweit sie mit den vorliegenden AGB inhaltlich übereinstimmen oder von idvos ausdrücklich schriftlich anerkannt wurden. Dies gilt auch, wenn idvos in Kenntnis entgegenstehender oder abweichender Bedingungen der Nutzer Leistungen vorbehaltlos erbringt.<br></br><br></br>
-
-
-
-<b>II. GEGENSTAND DES IDENTIFIZIERUNGS-SERVICE SIND</b><br></br>
-
-a. die Feststellung, Überprüfung und Bestätigung der Identität oder des Alters des Nutzers für den Partner im Auftrag des Partners und des Nutzers.<br></br>
-
-b. Die Übermittlung der erlangten Daten und Informationen an den Partner sowie<br></br>
-
-c. mit ausdrücklicher Einwilligung des Nutzers, die Speicherung eines Nutzerprofils zum Zwecke einer zukünftigen Alters- oder Identitätsfeststellung<br></br><br></br>
-
-
-
-<b>III. ABLAUF DER IDENTITÄTSFESTSTELLUNG</b><br></br>
-
-a. Die Feststellung und Überprüfung der Identität des Nutzers erfolgt auf Anforderung des Vertragspartners von idvos, welcher die Identität des Nutzers feststellen möchte bzw. aufgrund gesetzlicher Bestimmungen (z.B. aus dem Geldwäschegesetz) verifizieren muss, bevor ein Vertrag mit dem Partner zustande kommen kann.<br></br>
-
-b. Die Identitätsfeststellung erfolgt als Teil des Gesamtverfahrens mittels einer Videokonferenz zwischen dem Nutzer und einem idvos Mitarbeiter, welche zur Nachweissicherung aufgezeichnet wird.<br></br>
-
-c. Im Rahmen der Identifizierung werden nur solche Daten erhoben, die nach den jeweils einschlägigen Gesetzen (z.B. Geldwäschegesetz, Jugendmedienschutzstaatsvertrag) geeignet und erforderlich sind, die Identität oder das Alter des Nutzers festzustellen. Die erhobenen Daten werden sodann mit den vom Partner bereitgestellten personenbezogenen Daten des Nutzers abgeglichen.<br></br>
-
-d. Art und Umfang der Erhebung und Verarbeitung der Daten richtet sich nach den Anforderungen des Partners bzw. den einschlägigen rechtlichen Vorgaben hinsichtlich der Identitätsfeststellung oder Altersverifikation. Zu den abgefragten Daten zählen in der Regel Name, Geburtsort, Geburtsdatum, Staatsangehörigkeit sowie die Anschrift des Nutzers. Je nach einschlägiger Rechtsgrundlage kann zudem die Überprüfung der angegebenen Daten anhand eines gültigen, amtlichen Ausweisdokuments (z.B. Personalausweis) erforderlich sein. Hierbei werden ggf. weitere auf dem Ausweisdokument hinterlegte Daten abgefragt. Bei der Überprüfung kann es erforderlich sein, beide Seiten des Ausweisdokuments und den Nutzer selbst mittels eines Screenshots zu fotografieren.<br></br>
-
-e. Während der Videokonferenz erhält der Nutzer eine nur für den Zweck der einmaligen und eindeutigen Zuordnung gültige, zentral generierte Transaktionsnummer (TAN) per eMail oder SMS, welche der Nutzer während der Videokonferenz unmittelbar eingeben muss. Erst nach erfolgreicher Eingabe der TAN gelangt die Identitätsfeststellung zum Abschluss.<br></br>
-
-f. Die Identität des Nutzers wird dem Partner gegenüber durch idvos erst dann bestätigt, wenn die zur Identitätsfeststellung oder Altersverifikation erforderlichen Daten vollständig vorliegen und den jeweils einschlägigen rechtlichen Voraussetzungen entsprechen.<br></br>
-
-g. idvos benachrichtigt den Partner über den erfolgreichen Abschluss der Identifikation des Nutzers und übermittelt dem Partner auf dessen Anforderung alle im Rahmen der Identifizierung gefertigten Screenshots und sonstige vom Nutzer bereitgestellte Daten und Aufzeichnungen.<br></br>
-
-h. Die Nutzung des Identifizierungs-Service setzt die vorherige Zustimmung des Nutzers zur jeweils gültigen Datenschutzerklärung von idvos voraus. Die Datenschutzerklärung enthält ausdrücklich das Recht des Nutzers zum jederzeitigen Widerruf der Einwilligung, wobei im Falle eines Widerrufs die Nutzung des Identifizierungs-Service nicht mehr möglich ist.<br></br><br></br>
-
-
-
-<b>IV. VERFÜGBARKEIT DES IDVOS IDENTIFIZIERUNGS-SERVICE</b><br></br>
-
-a. idvos behält sich das Recht vor, den Identifizierungs-Service jederzeit einzustellen, umzustellen oder in sonstiger Weise zu ändern. Dies gilt insbesondere für den Fall, dass sich die rechtlichen Voraussetzungen hinsichtlich der Identifizierung ändern.<br></br>
-
-b. idvos bemüht sich, den Identifizierungs-Service ohne Unterbrechung zur Verfügung zu stellen. idvos kann jedoch keine Haftung für die ständige Verfügbarkeit des Identifizierungs-Service übernehmen. Die Verfügbarkeit des Identifizierungs-Service kann insbesondere dann beschränkt werden, wenn dies im Hinblick auf die Sicherheit oder Integrität der Server, die Durchführung technischer Instandsetzungs- oder Wartungsarbeiten oder im Hinblick auf Kapazitätsgrenzen erforderlich ist.<br></br><br></br>
-
-
-
-<b>V. ANMELDUNG</b><br></br>
-
-a. Die Anmeldung erfolgt durch vollständiges und korrektes Ausfüllen des elektronischen Formulars auf der Internetseite des Partners und durch anschließendes Absenden des Formulars an idvos durch Klicken des entsprechenden Buttons. Der Nutzer wird sodann auf die Seite des idvoss-Service weitergeleitet. idvos ist berechtigt, den Nutzer unter der von ihm angegeben eMail Adresse im Falle eines Abbruchs des weiteren Identifizierungs-Prozesses oder eines Abbruchs durch den Nutzer vor Beginn des Identifizierungsprozesses zu kontaktieren und über die weiteren Schritte der Identifizierung zu informieren.<br></br>
-
-b. Eine erfolgreiche Anmeldung bedarf der vorherigen ausdrücklichen Zustimmung des Nutzers zu den AGB und der gesonderten Datenschutzerklärung von idvos.<br></br><br></br>
-
-
-
-<b>VI. VERTRAGSSCHLUSS</b><br></br>
-
-a. Der Nutzer gibt durch das Absenden des Anmeldeformulars ein bindendes Angebot zum Abschluss eines Vertrages über die Erbringung der Identifizierungsleistung, die Bestätigung seiner Identität gegenüber dem Partner sowie die Verarbeitung und Speicherung und Weitergabe seiner Daten nach Maßgabe dieser AGB und der gesonderten Datenschutzerklärung von idvos ab. Ein Vertrag kommt erst durch die tatsächliche Aufnahme der Identifizierungsleistung zustande.<br></br>
-
-b. idvos speichert keine Vertragstexte oder hält diese dauerhaft für den Nutzer zum Abruf bereit.<br></br><br></br>
-
-
-
-<b>VII. MITWIRKUNGSLEISTUNGEN UND SONSTIGE PFLICHTEN DES NUTZERS</b><br></br>
-
-a. Der Nutzer verpflichtet sich zur angemessenen Mitwirkung bei der Erbringung des Identifizierungs-Service.<br></br>
-
-b. Insbesondere verpflichtet sich der Nutzer, die für die Identifizierung relevanten Daten wahrheitsgemäß und vollständig zur Verfügung zu stellen.<br></br>
-
-c. Für die Erbringung des Identifizierungs-Service ist auf Seiten des Nutzers ein Endgerät erforderlich, das über einen Internetzugang und eine Webcam (Bild und Ton) verfügt. Es obliegt dem Nutzer sicherzustellen, dass sein Gerät über die entsprechenden Leistungsmerkmale verfügt, um den Identifizierungs-Prozess zu durchlaufen.<br></br>
-
-d. Der Nutzer verpflichtet sich zur Geheimhaltung der ihm von idvos übermittelten Daten. Er stellt sicher, dass die Daten nur von ihm verwendet werden und sichert sie gegen den Zugriff von Dritten, insbesondere Minderjährigen.<br></br>
-
-e. Verstößt der Nutzer gegen eine seiner Pflichten aus diesen AGB, so behält sich idvos vor, den Identifizierungs-Prozess jederzeit abzubrechen.<br></br><br></br>
-
-
-
-<b>VIII. WIDERRUFSBELEHRUNG</b><br></br>
-
-Sie haben das Recht, diesen Vertrag innerhalb von 14 Tagen ohne Angabe von Gründen in Textform zu widerrufen. Die Frist für den Widerruf beginnt mit Erhalt dieser Belehrung, jedoch nicht vor Vertragsschluss, zu laufen.<br></br><br></br>
-
-
-
-Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Erklärung über den Widerruf vor Ablauf der Frist absenden. Der Widerruf ist zu richten an:<br></br>
-
-
-
-idvos GmbH<br></br>
-
-Invalidenstrasse 7<br></br>
-
-10115 Berlin<br></br><br></br>
-
-
-
-<b>IX. VERGÜTUNG</b><br></br>
-
-a. Die Erbringung der Identifizierungsleistung erfolgt für den Nutzer von idvos unentgeltlich.<br></br>
-
-b. Durch die Nutzung des idvoss-Service können jedoch Verbindungs- und Übertragungsentgelte anfallen, die vom Internetprovider des Nutzers erhoben werden und vom Nutzer zu tragen sind.<br></br><br></br>
-
-<b>X. DATENSCHUTZ</b>
-
-idvos erhebt, verarbeitet und nutzt personenbezogene Daten der Nutzer ausschließlich zum Zweck der Erbringung des Identifizierungs-Service. Eine weitere Verwendung der Daten erfolgt nur mit dem ausdrücklichen Einverständnis des Nutzers. Bezüglich der Einzelheiten wird auf die Datenschutzerklärung von idvos verwiesen, die jederzeit auf der Website von idvos abgerufen werden kann.<br></br><br></br>
-
-
-
-<b>XI. HAFTUNG</b><br></br>
-
-a. idvos haftet nach den gesetzlichen Bestimmungen für Schäden, die durch arglistiges Verhalten verursacht wurden sowie für Schäden, die durch Vorsatz oder grobe Fahrlässigkeit von idvos verursacht wurden.<br></br>
-
-b. idvos haftet gemäß den gesetzlichen Bestimmungen für Personenschäden und Schäden nach dem Produkthaftungsgesetz.<br></br>
-
-c. Für sonstige Schäden haftet idvos ausschließlich nach Maßgabe der folgenden Bestimmungen, sofern sich nicht aus einer übernommenen Garantie etwas anderes ergibt.<br></br>
-
-d. idvos haftet auf Schadensersatz begrenzt auf die Höhe des vertragstypischen vorhersehbaren Schadens<br></br>
-
-i. Für Schäden aus einer leicht fahrlässigen Verletzung wesentlicher Vertragspflichten oder von Pflichten, deren Erfüllung die ordnungsgemäße Durchführung des Vertrages überhaupt erst ermöglichen und auf deren Einhaltung der Nutzer regelmäßig vertrauen darf,<br></br>
-
-ii. Sowie für Schäden, die von einfachen Erfüllungsgehilfen von idvos vorsätzlich oder grob fahrlässig verursacht wurden.<br></br>
-
-e. Im Übrigen ist jegliche Haftung für leicht fahrlässig verursachte Schäden ausgeschlossen.<br></br>
-
-f. Ein Mitverschulden des Nutzers mindert die Höhe eines etwaigen Schadensersatzanspruchs unbeschadet der vorhergehenden Bestimmungen. Dies gilt insbesondere für die unzureichende Mitwirkung des Nutzers bei der Erbringung des Identifizierungs-Service sowie Organisationsfehler, unzureichende Datensicherung oder Verstoß gegen sonstige Vertragspflichten.<br></br>
-
-g. Zum Zwecke einer möglichst effizienten Schadensminderung ist der Nutzer verpflichtet, etwaige Schäden im Sinne dieser Haftungsregelungen unverzüglich gegenüber idvos schriftlich anzuzeigen.<br></br>
-
-h. idvos haftet für die Wiederbeschaffung von Daten nur, soweit der Kunde alle erforderlichen und angemessenen Vorkehrungen zur Datensicherung getroffen und sichergestellt hat, dass die Daten aus Datenmaterial, das in maschinenlesbarer Form bereit gehalten wird, mit vertretbarem Aufwand wiederhergestellt werden können.<br></br><br></br>
-
-
-
-<b>XII. GERICHTSSTAND</b><br></br>
-
-a. Diese AGB und alle unter Einbeziehung dieser AGB zwischen idvos und dem Nutzer geschlossenen Verträge unterliegen dem Recht der Bundesrepublik Deutschland unter Ausschluss des Kollisionsrechts und des Übereinkommens der Vereinten Nationen vom 11. April 1980 über Verträge über den internationalen Warenkauf.<br></br><br></br>
-
-
-
-<b>XIII. SONSTIGES</b><br></br>
-
-a. Sollten einzelne Bestimmungen dieser AGB unwirksam oder nicht durchsetzbar sein oder werden oder eine Lücke enthalten, so bleiben die übrigen Bestimmungen hiervon unberührt. Die Parteien verpflichten sich, anstelle der unwirksamen oder nicht durchsetzbaren Regelung eine wirksame und durchsetzbare Regelung zu treffen, die dem wirtschaftlichen Zweck der unwirksamen oder nicht durchsetzbaren Regelung am nächsten kommt bzw. diese Lücke ausfüllt<br></br>
-
-b. Änderungen und Ergänzungen dieser AGB bedürfen der Schriftform.<br></br>
-
-Stand: Oktober 2014</string>
-
-    <string name="info_label">InformaAonen</string>
-    <string name="connecting">Verbinden...</string>
+    <string name="info_label">Informationen</string>
+    <string name="connecting">Verbinden…</string>
     <string name="info_call">Rufen Sie uns an bei Problemen oder Fragen</string>
+    <string name="info_info">idvos führt online Identifizierungen nach den gesetzlichen Bestimmungen durch. Sie können sich online oder mobil von zu Hause oder unterwegs jeder Zeit identifizieren. Die Sicherheit Ihrer Daten steht dabei im Vordergrund.</string>
 
-    <string name="info_info">idvos führt online Identifizierungen nach den gesetzlichen
-    Bestimmungen durch. Sie können sich online oder mobil von zu Hause oder unterwegs jeder
-    Zeit identifizieren. Die Sicherheit Ihrer Daten steht dabei im Vordergrund.</string>
-    
     <string name="login_label">Anmeldung</string>
-    <string name="privacy_text">Datenschutzerklärung
-REGELUNGEN ZUM DATENSCHUTZ UND DATENSCHUTZRECHTLICHE EINWILLIGUNGEN
-
-Der Schutz Ihrer Daten hat für uns höchste Priorität. An dieser Stelle möchten wir Sie daher über die Erhebung, Verarbeitung und Nutzung von personenbezogenen Daten im Zusammenhang mit der Nutzung des idvos Identifizierungs-Service und unserer Website informieren.
-
-idvos beachtet bei der Erhebung, Verwendung und Nutzung Ihrer personenbezogenen Daten alle datenschutzrechtlichen Vorschriften, insbesondere die Vorschriften des Bundesdatenschutzgesetzes (BDSG) und des Telemediengesetzes (TMG).
-
-1. ALLGEMEINES
-Im Rahmen der von idvos durchgeführten Identifizierungsleistung oder Altersverifikation ist es erforderlich, personenbezogene Daten zu erheben, zu nutzen und zu verarbeiten. Die Prüfung der Identität oder des Alters erfolgt dabei im Auftrag des jeweiligen Partnerunternehmens, auf dessen Anforderung hin die Prüfung durchgeführt wird. idvos erhebt, verarbeitet und nutzt die von Ihnen angegebenen Daten dabei ausschließlich zu dem Zweck, Ihre Identität oder Ihr Alter festzustellen und gegenüber dem jeweiligen Partner zu bestätigen.
-
-Art und Umfang der vorgenommenen Erhebung, Verarbeitung und Nutzung dieser Daten hängt von den jeweiligen Anforderungen des Partners und den gesetzlichen Vorgaben hinsichtlich der Identifizierung oder Altersverifikation ab, die je nach angestrebtem Vertragsverhältnis variieren können. In der Regel sind insbesondere folgende Daten für die Identifizierung oder Altersprüfung relevant:
-
-Name, Vorname
-Anschrift
-Geburtsdatum
-Geburtsort
-Staatsangehörigkeit
-eMail-Adresse
-Telefonnummer
-Weitere auf dem amtlichen Ausweis enthaltene Daten (z.B. ausstellende Behörde, Ausweisnummer)
-Tonaufzeichnung der Videokonferenz
-Nach erfolgreichem Abschluss der Identifizierung oder Altersverifikation übermitteln wir die erhobenen Daten an den Partner. Dieser wird die Daten nutzen, um den für ihn geltenden Rechtsvorschriften hinsichtlich der Identifizierung oder Altersverifikation nachzukommen (z.B. solchen des Geldwäschegesetzes).
-
-Vorbehaltlich gesetzlicher Aufbewahrungsfristen werden wir Ihre Daten unverzüglich nach erfolgreicher Übermittlung an den Partner löschen.
-
-2. COOKIES
-idvos verwendet zum Teil sog. „Cookies“. Dies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Sie dienen dazu, Ihr genutztes Endgerät beim erneuten Besuch unserer Website wiederzuerkennen oder einzelne Parameter im Zusammenhang mit der Nutzung unserer Website zu analysieren. Zu unterscheiden sind sog. Sitzungs-Cookies von sog. dauerhaften Cookies. Sitzungs-Cookies werden nach Beendigung der jeweiligen Sitzung von Ihrem Endgerät gelöscht. Dauerhafte Cookies verbleiben auf Ihrem Gerät und dienen insbesondere der Wiedererkennung Ihres Geräts bei der erneuten Anmeldung auf unserer Website. Durch Cookies wird lediglich das Gerät, nicht jedoch die Person des Verwenders identifiziert. Eine Speicherung von personenbezogenen Daten erfolgt im Zusammenhang mit der Verwendung von Cookies nicht. Sie können die Verwendung von Cookies dennoch in Ihrem Internet-Browser jederzeit deaktivieren. Allerdings führt die Deaktivierung von Cookies zu Einschränkungen bei der Nutzbarkeit unserer Website und des Identifizierungs-Service.
-
-3. VERWENDUNG VON GOOGLE ANALYTICS
-Die idvos Website verwendet Google Analytics. Dabei handelt es sich um einen Web-Analysedienst der Firma Google Inc., USA („Google“). Google Analytics verwendet Cookies, die eine Analyse der Benutzung der Website durch Sie ermöglichen. Die durch den Cookie erzeugten Informationen über Ihre Benutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Im Falle der Aktivierung der IP- Anonymisierung auf dieser Webseite, wird Ihre IP-Adresse von Google jedoch innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum zuvor gekürzt. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt. Im Auftrag des Betreibers dieser Webseite wird Google diese Informationen benutzen, um Ihre Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten für den Webseitenbetreiber zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen zu erbringen. Auch wird Google diese Informationen gegebenenfalls an Dritte übertragen, sofern dies gesetzlich vorgeschrieben oder soweit Dritte diese Daten im Auftrag von Google verarbeiten. Google wird in keinem Fall Ihre IP-Adresse mit anderen Daten von Google in Verbindung bringen. Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser Software verhindern; wir weisen Sie jedoch darauf hin, dass Sie in diesem Fall gegebenenfalls nicht sämtliche Funktionen dieser Website vollumfänglich nutzen können. Sie können darüber hinaus die Erfassung der durch das Cookie erzeugten und auf Ihre Nutzung der Website bezogenen Daten (inkl. Ihrer IP-Adresse) an Google sowie die Verarbeitung dieser Daten durch Google verhindern, indem sie das unter dem folgenden Link verfügbare Browser-Plugin herunterladen und installieren http://tools.google.com/dlpage/gaoptout?hl=de . Durch die Nutzung dieser Website erklären Sie sich mit der Bearbeitung der über Sie erhobenen Daten durch Google in der zuvor beschriebenen Art und Weise und zu dem zuvor benannten Zweck einverstanden. Durch das setzen eines sog. Opt-Out-Cookies haben Sie die Möglichkeit, jede Form von Benutzer-Analyse auf dieser Website künftig zu unterbinden. Solange Sie diesen Cookie im Browser nicht löschen, wird eine Analyse Ihres Nutzerverhaltens unterbleiben. Auch haben Sie die Möglichkeit, die Webanalyse für diese Website wieder zu aktivieren.
-
-4. SICHERE DATENÜBERTRAGUNG
-Ihre persönlichen Daten werden von idvos ausschließlich verschlüsselt übertragen. Um ein Höchstmaß an Sicherheit für Ihre Daten zu gewährleisten verwenden wir zur Verschlüsselung Ihrer Daten aktuelle SSL-Standards (SSL = Secure Sockets Layer).
-
-5. WEITERGABE VON DATEN AN DRITTE
-idvos übermittelt Ihre Daten ausschließlich an den jeweiligen Partner, auf dessen Anforderung idvos die Identifizierung oder Altersverifikation vornimmt. Sofern wir im Hinblick auf personenbezogene Daten auf Dienstleistungen Dritter zurückgreifen, so erfolgt dies ausschließlich im Rahmen der gesetzlichen Vorgaben des § 11 Bundesdatenschutzgesetz (BDSG).
-
-6. WIDERRUFSRECHT
-Sie sind berechtigt, die Einwilligung zur Erhebung, Verarbeitung und Nutzung Ihrer personenbezogenen Daten jederzeit schriftlich oder per eMail mit Wirkung für die Zukunft und ohne Angabe von Gründen zu widerrufen. Ihre Daten werden im Falle eines Widerrufs von uns vorbehaltlich gesetzlicher Aufbewahrungsfristen unverzüglich gelöscht.
-
-7. AUSKUNFTSRECHT
-Sie haben das Recht, jederzeit und ohne Angabe von Gründen Auskunft über die bei uns über Sie gespeicherten personenbezogenen Daten zu erhalten und ggf. Berichtigung, Sperrung oder Löschung der Daten zu verlangen.
-
-8. ÄNDERUNGEN
-Im Zusammenhang mit technischen Neuerungen oder Weiterentwicklungen werden wir ggf. auch diese Datenschutzerklärung laufend anpassen und Änderungen auf dieser Seite einarbeiten. Sie werden rechtzeitig über eine ggf. erforderliche erneute Einwilligung Ihrerseits informiert.
-
-9. ANSPRECHPARTNER
-Sollten Sie Fragen im Zusammenhang mit dieser Datenschutzerklärung haben, so wenden Sie sich gerne unter folgender eMail-Adresse an uns: datenschutz@idvos.de Unter der angegebenen eMail Adresse können Sie auch Ihr Auskunftsrecht oder Ihr Widerrufsrecht hinsichtlich der Zustimmung zu dieser Datenschutzerklärung geltend machen.</string>
-    <string name="login_title">Please login to start:</string>
     <string name="login_start">Identifizierung starten</string>
     <string name="login_lastname">Nachname</string>
     <string name="login_code">Referenznummer</string>
     <string name="connection_failed_try_again">Verbindung fehlgeschlagen. Bitte erneut versuchen.</string>
-    <string name="login_desc">Was wird für die Identifizierung benötigt?\n
 
-Für die Identifizierung benötigen Sie:\n
--  einen stabilen
-Internetzugang\n
--  ein Ausweisdokument
-(Personalausweis oder
-Reisepass)\n
--  Zugang zu Ihren E-Mails.</string>
-    
+    <string name="login_desc">Was wird für die Identifizierung benötigt?\n\nFür die Identifizierung benötigen Sie:\n
+        <ul style="list-style-type:disc">
+            <li>einen stabilen Internetzugang \n</li>
+            <li>ein Ausweisdokument (Personalausweis oder Reisepass) \n</li>
+            <li>Zugang zu Ihren E-Mails.</li>
+        </ul>
+    </string>
+    <string name="start_items">
+        <ul style="list-style-type:disc">
+            <li>Keine Weitergabe Ihrer Daten an Externe \n</li>
+            <li> Übermittlung der Daten nur auf deutschen Servern \n</li>
+            <li> Einhaltung höchster Sicherheitsstandards</li>
+        </ul>
+    </string>
+
     <string name="identification_title">Identifizierung</string>
     <string name="identification_summary">Zusammenfassung</string>
-    <string name="identification_wait_for_tan">Wait for TAN...</string>
-    <!--<string name="identification_enter_tan">Bitte warten... Ihr TAN-Nummer wurde verschickt</string>-->
-    <string name="identification_enter_tan">Bitte warten... Ihr TAN-Nummer wurde verschickt</string>
-
+    <string name="identification_wait_for_tan">Bitte warten für TAN…</string>
+    <string name="identification_enter_tan">Bitte warten… Ihr TAN-Nummer wurde verschickt</string>
 
     <string name="identification_cancel_title">Hilfe</string>
     <string name="identification_cancel_message">Rufen Sie uns an bei Fragen oder Problemen</string>
@@ -257,15 +46,57 @@ Reisepass)\n
     <string name="taninput_verify">Bestätigen</string>
     <string name="taninput_valid">Ihre TAN-Eingabe war erfolgreich</string>
     <string name="taninput_invalid">Ihre TAN-Eingabe war nicht erfolgreich</string>
-    <string name="taninput_failed">Error! Try again</string>
+    <string name="taninput_failed">Versuchen Sie es erneut</string>
     <string name="taninput_verifying">wird geprüft…</string>
-<!--
-    <string name="taninput_verifying">Verifying…</string>
--->
 
     <string name="verificationresult_success">Ihre Identifizierung war erfolgreich!!</string>
     <string name="verificationresult_failure">Ihre Identifizierung war nicht erfolgreich!!</string>
     <string name="verificationresult_confirmation">Abschließen</string>
     <string name="agb_error">Um die Identifizierung von idvos zu nutzen, müssen Sie zuerst bestätigen, dass Sie die AGB und Datenschutzerklärung akzeptieren. Zusätzlich müssen Sie uns aus gesetzlichen Gründen zur Aufnahme des Gespräches zustimmen.</string>
+
+    <string name="login_title">Bitte geben Sie Ihre Anmeldedaten ein:</string>
+    <string name="slogan">Ihre Identifizierung von zu Hause</string>
+    <string name="info_protection_title">DATENSCHUTZ</string>
+    <string name="info_protection">Einhaltung höchster Datenschutzstandards durch Datensparsamkeit</string>
+    <string name="info_security_title">DATENSICHERHEIT</string>
+    <string name="info_security">P2P-Verbindung erfüllt Anforderungen an höchste Datensicherheit mit Verwendung zertifizierter Rechenzentren in Deutschland.</string>
+    <string name="info_service_title">24/7 SERVICE GARANTIE</string>
+    <string name="info_service">Service-Zeiten 24 Stunden, 7 Tage die Woche.</string>
+    <string name="bigger_slogan">idvos bietet die einfachste und bequemste GwG-konforme Identifizierungsmethode. Die Sicherheit Ihrer Daten liegt uns dabei besonders am Herzen.</string>
+    <string name="practical_title">Praktisch!</string>
+    <string name="practical">Führen Sie die Identifizierung ganz bequem von zu Hause aus durch.</string>
+    <string name="fast_title">Schnell!</string>
+    <string name="fast">Identifizieren Sie sich innerhalb von wenigen Minuten.</string>
+    <string name="secure_title">Sicher!</string>
+    <string name="secure">Ihre Daten werden mit höchsten Bankenstandards geschützt.</string>
+    <string name="please_wait">Wir bitten um ein wenig Geduld. Ihre Identifizierung wird gleich gestartet…</string>
+    <string name="please_wait_simple">Bitte warten…</string>
+    <string name="cancel_session_confirm">Wollen Sie die Videositzung wirklich beenden?</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="phone">tel:+493020849261</string>
+    <string name="no_flashlight">Frontkamera hat keine Blitzlicht!</string>
+    <string name="connecting_message">Verbindung herstellen…</string>
+    <string name="timeout_error">Fehler beim Server in der richtigen Zeit verbinden</string>
+    <string name="surname_request">Bitte geben Sie Ihren Nachnamen an</string>
+    <string name="reference_number_request">Bitte geben Sie Ihre Referenznummer an, welche Sie per E-Mail oder durch unseren Partner erhalten haben</string>
+    <string name="incorrect_data">Ihre Anmeldedaten sind leider nicht korrekt</string>
+    <string name="ok">OK</string>
+    <string name="privacy_policy">Datenschutzbestimmungen</string>
+    <string name="privacy_title">Datenschutz</string>
+    <string name="terms_and_conditions">AGB</string>
+
+    <string name="response_phone">Mobiltelefon</string>
+    <string name="response_mail">E-Mail</string>
+    <string name="response_name">Vorname(n)</string>
+    <string name="response_surname">Nachname</string>
+    <string name="response_date_of_birth">Geburtstag</string>
+    <string name="response_place_of_birth">Geburtsort</string>
+    <string name="response_nationality">Staatsangehörigkeit</string>
+    <string name="response_address">Adresse</string>
+    <string name="response_city">Wohnort</string>
+    <string name="response_post_code">Postleitzahl</string>
+    <string name="response_gender">Geschlecht</string>
+    <string name="response_country">Land</string>
 
 </resources>

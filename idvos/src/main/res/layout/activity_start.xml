@@ -39,7 +39,7 @@
                 android:textStyle="bold"
                 android:gravity="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Ihre Identifizierung von zu Hause"/>
+                android:text="@string/slogan"/>
 
 
 
@@ -52,7 +52,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:text="idvos bietet die einfachste und bequemste GwG-konforme Identifizierungsmethode. Die Sicherheit Ihrer Daten liegt uns dabei besonders am Herzen."
+                android:text="@string/bigger_slogan"
                 android:padding="5dp"
                 android:textSize="12sp"
                 android:textColor="#000000"
@@ -98,13 +98,13 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:textColor="#000000"
-                        android:text="Praktisch!"/>
+                        android:text="@string/practical_title"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:textSize="11sp"
                         android:gravity="center"
-                        android:text="Führen Sie die Identifizierung ganz bequem von zu Hause aus durch."
+                        android:text="@string/practical"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
@@ -127,13 +127,13 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:textColor="#000000"
-                        android:text="Schnell!"/>
+                        android:text="@string/fast_title"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:textSize="11sp"
                         android:gravity="center"
-                        android:text=" Identifizieren Sie sich innerhalb von wenigen Minuten."
+                        android:text="@string/fast"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
@@ -156,13 +156,13 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:textColor="#000000"
-                        android:text="Sicher!"/>
+                        android:text="@string/secure_title"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:textSize="11sp"
                         android:gravity="center"
-                        android:text="Ihre Daten werden mit höchsten Bankenstandards geschützt."
+                        android:text="@string/secure"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>

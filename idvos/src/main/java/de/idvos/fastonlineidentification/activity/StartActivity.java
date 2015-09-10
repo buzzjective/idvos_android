@@ -70,8 +70,10 @@ public class StartActivity extends BaseActivity implements OnClickListener {
         };
 //        firstCheckboxSpannable.removeSpan(datenschutzbestimmungenClickableSpan);
 
-        firstCheckboxSpannable.setSpan(agbClickableSpan, firstText.indexOf("AGB"), firstText.indexOf("AGB") + 3, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        firstCheckboxSpannable.setSpan(datenschutzbestimmungenClickableSpan, firstText.indexOf("Datenschutzbestimmungen"), firstText.indexOf("Datenschutzbestimmungen") + "Datenschutzbestimmungen".length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        String termsAndCOnditionsString = getString(R.string.terms_and_conditions);
+        firstCheckboxSpannable.setSpan(agbClickableSpan, firstText.indexOf(termsAndCOnditionsString), firstText.indexOf(termsAndCOnditionsString) + termsAndCOnditionsString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        String privacyPolicyString = getString(R.string.privacy_policy);
+        firstCheckboxSpannable.setSpan(datenschutzbestimmungenClickableSpan, firstText.indexOf(privacyPolicyString), firstText.indexOf(privacyPolicyString) + privacyPolicyString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         mFirstCheckbox = ((CheckBox) findViewById(R.id.first_checkbox));
         mSecondCheckbox = ((CheckBox) findViewById(R.id.second_checkbox));
