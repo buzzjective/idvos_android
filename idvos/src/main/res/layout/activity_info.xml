@@ -22,11 +22,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/info_text_size"
-                android:textColor="@color/info_text_color"
+                android:inputType="none"
+                android:editable="false"
                 android:text="@string/info_info"
-                android:id="@+id/security_text"
-                android:inputType="none" />
-
+                android:textColor="@color/info_text_color"
+                android:id="@+id/security_text"/>
 
             <LinearLayout
                 android:layout_width="match_parent"

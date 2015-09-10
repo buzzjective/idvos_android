@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">idvos Identification</string>
-    <string name="start_title">Welcome</string>
-    <string name="start_accept">Next</string>
+    <string name="app_name">idvos Identifizierung</string>
+    <string name="start_title">Willkommen</string>
+    <string name="start_accept">Weiter</string>
     <string name="terms_label">Bedingungen</string>
     <string name="first_checkbox">Ich habe die AGB und Datenschutzbestimmungen gelesen und akzeptiere diese.</string>
     <string name="second_checkbox">Ich stimme zu, dass die Tonaufnahmen der Identifizierung aufgenommen und gespeichert werden.</string>
-    <string name="info_label">Information</string>
-    <string name="connecting">Connecting</string>
+    <string name="info_label">Informationen</string>
+    <string name="connecting">Verbinden</string>
     <string name="info_call">Rufen Sie uns an bei Problemen oder Fragen</string>
     <string name="info_info">idvos führt online Identifizierungen nach den gesetzlichen Bestimmungen durch. Sie können sich online oder mobil von zu Hause oder unterwegs jeder Zeit identifizieren. Die Sicherheit Ihrer Daten steht dabei im Vordergrund.</string>
     <string name="login_label">Anmeldung</string>
@@ -15,13 +15,13 @@
     <string name="login_lastname">Nachname</string>
     <string name="login_code">Referenznummer</string>
     <string name="connection_failed_try_again">Verbindung fehlgeschlagen. Bitte erneut versuchen.</string>
-    <string name="identification_title">Identification</string>
+    <string name="identification_title">Identifizierung</string>
     <string name="identification_summary">Zusammenfassung</string>
     <string name="identification_wait_for_tan">Bitte warten für TAN…</string>
     <string name="identification_enter_tan">Bitte warten… Ihr TAN-Nummer wurde verschickt</string>
-    <string name="identification_cancel_title">Help</string>
+    <string name="identification_cancel_title">Hilfe</string>
     <string name="identification_cancel_message">Rufen Sie uns an bei Fragen oder Problemen</string>
-    <string name="identification_cancel_cancel">Back</string>
+    <string name="identification_cancel_cancel">Zurück</string>
     <string name="identification_cancel_positive">Rufen Sie uns an</string>
     <string name="taninput_title">Bitte geben Sie Ihre 5-stellige TAN-Nummer ein:</string>
     <string name="taninput_verify">Bestätigen</string>
