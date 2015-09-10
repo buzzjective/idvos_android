@@ -80,8 +80,9 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:padding="2dp"
                     android:orientation="vertical"
                     android:gravity="center_horizontal|top"
                     android:layout_weight="1">
@@ -109,8 +110,9 @@
 
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:padding="2dp"
                     android:orientation="vertical"
                     android:gravity="center_horizontal|top"
                     android:layout_weight="1">
@@ -138,8 +140,9 @@
 
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:padding="2dp"
                     android:orientation="vertical"
                     android:gravity="center_horizontal|top"
                     android:layout_weight="1">
@@ -197,7 +200,7 @@
         android:orientation="vertical">
 
 
-        <CheckBox
+        <de.idvos.fastonlineidentification.view.NoPersistentTextCheckBox
             android:id="@+id/first_checkbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -205,7 +208,7 @@
             android:textSize="12sp"
             android:text="@string/first_checkbox"/>
 
-        <CheckBox
+        <de.idvos.fastonlineidentification.view.NoPersistentTextCheckBox
             android:id="@+id/second_checkbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

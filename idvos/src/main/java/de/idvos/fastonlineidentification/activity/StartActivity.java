@@ -51,7 +51,12 @@ public class StartActivity extends BaseActivity implements OnClickListener {
         findViewById(de.idvos.fastonlineidentification.sdk.R.id.button_start).setOnClickListener(this);
 
 
-        String firstText = getString(R.string.first_checkbox);
+        String firstText = getString(
+                R.string.first_checkbox,
+                getString(R.string.terms_and_conditions),
+                getString(R.string.privacy_policy)
+        );
+
         Spannable firstCheckboxSpannable = Spannable.Factory.getInstance().newSpannable(firstText);
         ClickableSpan agbClickableSpan = new ClickableSpan() {
             @Override
@@ -70,8 +75,8 @@ public class StartActivity extends BaseActivity implements OnClickListener {
         };
 //        firstCheckboxSpannable.removeSpan(datenschutzbestimmungenClickableSpan);
 
-        String termsAndCOnditionsString = getString(R.string.terms_and_conditions);
-        firstCheckboxSpannable.setSpan(agbClickableSpan, firstText.indexOf(termsAndCOnditionsString), firstText.indexOf(termsAndCOnditionsString) + termsAndCOnditionsString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        String termsAndConditionsString = getString(R.string.terms_and_conditions);
+        firstCheckboxSpannable.setSpan(agbClickableSpan, firstText.indexOf(termsAndConditionsString), firstText.indexOf(termsAndConditionsString) + termsAndConditionsString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         String privacyPolicyString = getString(R.string.privacy_policy);
         firstCheckboxSpannable.setSpan(datenschutzbestimmungenClickableSpan, firstText.indexOf(privacyPolicyString), firstText.indexOf(privacyPolicyString) + privacyPolicyString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
@@ -147,7 +152,6 @@ public class StartActivity extends BaseActivity implements OnClickListener {
                 if (resultCode == RESULT_CANCELED){
                     finish();
                 }
-                return;
         }
     }
 
