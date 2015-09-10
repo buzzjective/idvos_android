@@ -56,6 +56,7 @@ public class StartActivity extends BaseActivity implements OnClickListener {
                 getString(R.string.terms_and_conditions),
                 getString(R.string.privacy_policy)
         );
+
         Spannable firstCheckboxSpannable = Spannable.Factory.getInstance().newSpannable(firstText);
         ClickableSpan agbClickableSpan = new ClickableSpan() {
             @Override
@@ -151,7 +152,6 @@ public class StartActivity extends BaseActivity implements OnClickListener {
                 if (resultCode == RESULT_CANCELED){
                     finish();
                 }
-                return;
         }
     }
 

@@ -5,14 +5,14 @@
     <string name="start_accept">Next</string>
     <string name="terms_label">Bedingungen</string>
     <string name="first_checkbox">I have read and accepted %1$s and %2$s.</string>
-    <string name="second_checkbox">Ich stimme zu, dass die Tonaufnahmen der Identifizierung aufgenommen und gespeichert werden.</string>
+    <string name="second_checkbox">English Ich stimme zu, dass die Tonaufnahmen der Identifizierung aufgenommen und gespeichert werden.</string>
     <string name="info_label">Information</string>
     <string name="connecting">Connecting</string>
     <string name="info_call">Rufen Sie uns an bei Problemen oder Fragen</string>
     <string name="info_info">idvos führt online Identifizierungen nach den gesetzlichen Bestimmungen durch. Sie können sich online oder mobil von zu Hause oder unterwegs jeder Zeit identifizieren. Die Sicherheit Ihrer Daten steht dabei im Vordergrund.</string>
     <string name="login_label">Anmeldung</string>
-    <string name="login_start">Identifizierung starten</string>
-    <string name="login_lastname">Nachname</string>
+    <string name="login_start">Start identification</string>
+    <string name="login_lastname">Name</string>
     <string name="login_code">Referenznummer</string>
     <string name="connection_failed_try_again">Verbindung fehlgeschlagen. Bitte erneut versuchen.</string>
     <string name="identification_title">Identification</string>
@@ -33,7 +33,7 @@
     <string name="verificationresult_failure">Ihre Identifizierung war nicht erfolgreich!</string>
     <string name="verificationresult_confirmation">Abschließen</string>
     <string name="agb_error">Um die Identifizierung von idvos zu nutzen, müssen Sie zuerst bestätigen, dass Sie die AGB und Datenschutzerklärung akzeptieren. Zusätzlich müssen Sie uns aus gesetzlichen Gründen zur Aufnahme des Gespräches zustimmen.</string>
-    <string name="login_title">Bitte geben Sie Ihre Anmeldedaten ein:</string>
+    <string name="login_title">English Bitte geben Sie Ihre Anmeldedaten ein:</string>
     <string name="slogan">Ihre Identifizierung von zu Hause</string>
     <string name="info_protection_title">DATENSCHUTZ</string>
     <string name="info_protection">Einhaltung höchster Datenschutzstandards durch Datensparsamkeit</string>
@@ -76,7 +76,7 @@
     <string name="response_post_code">Postleitzahl</string>
     <string name="response_gender">Geschlecht</string>
     <string name="response_country">Land</string>
-    <string name="login_desc">Was wird für die Identifizierung benötigt?\n\nFür die Identifizierung benötigen Sie:\n
+    <string name="login_desc">What do you exactly need for identification?\n\nFür die Identifizierung benötigen Sie:\n
         <ul style="list-style-type:disc">
             <li>einen stabilen Internetzugang \n</li>
             <li>ein Ausweisdokument (Personalausweis oder Reisepass) \n</li>
