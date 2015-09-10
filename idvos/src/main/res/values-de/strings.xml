@@ -4,7 +4,7 @@
     <string name="start_title">Willkommen</string>
     <string name="start_accept">Weiter</string>
     <string name="terms_label">Bedingungen</string>
-    <string name="first_checkbox">Ich habe die AGB und Datenschutzbestimmungen gelesen und akzeptiere diese.</string>
+    <string name="first_checkbox">Ich habe die %1$s und %2$s gelesen und akzeptiere diese.</string>
     <string name="second_checkbox">Ich stimme zu, dass die Tonaufnahmen der Identifizierung aufgenommen und gespeichert werden.</string>
     <string name="info_label">Informationen</string>
     <string name="connecting">Verbinden</string>
