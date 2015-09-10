@@ -21,7 +21,8 @@ public class TermsActivity extends BaseActivity {
 		setMenuButton(R.drawable.ic_action_bac, true);
 
         if(getIntent().getIntExtra("text",-1) > 0){
-            ((WebView)findViewById(R.id.webview)).loadUrl("file:///android_asset/daten.html");
+			String urlDaten = "file:///android_asset/daten.html";
+			((WebView)findViewById(R.id.webview)).loadUrl(urlDaten);
             setTitle("Datenschutz");
         }else{
             setTitle("AGB");
