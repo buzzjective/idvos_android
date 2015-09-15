@@ -1,5 +1,6 @@
 package de.idvos.fastonlineidentification.sdk;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
@@ -58,13 +59,45 @@ public class IdvosSDK {
     /**
      * Starts the identification progress. Result will be returned in {@link Activity#onActivityResult(int, int, Intent)}
      *
-     * @param hash                - identification hash
-     * @param activityRequestCode - request-code for {@link Activity#onActivityResult(int, int, Intent)}
+     * @param activity    The {@link Activity} starting the identification.
+     * @param requestCode The request code for {@link Activity#onActivityResult(int, int, Intent)}
+     * @param hash        The identification hash.
      */
-    public void startIdentification(Activity activity, int activityRequestCode, String hash) {
+    public void startIdentification(Activity activity, int requestCode, String hash) {
         Intent intent = new Intent(activity, StartActivity.class);
         intent.putExtra(KEY_IDENTIFICATION_HASH, hash);
-        activity.startActivityForResult(intent, activityRequestCode);
+        activity.startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * Starts the identification progress. Result will be returned in {@link android.app.Fragment#onActivityResult(int,
+     * int, Intent) onActivityResult(int, int, Intent)}
+     *
+     * @param fragment    The {@link android.app.Fragment Fragment} starting the identification.
+     * @param requestCode The request code for {@link android.app.Fragment#onActivityResult(int, int, Intent)
+     *                    onActivityResult(int, int, Intent)}
+     * @param hash        The identification hash.
+     */
+    @TargetApi(11)
+    public void startIdentification(android.app.Fragment fragment, int requestCode, String hash) {
+        Intent intent = new Intent(fragment.getActivity(), StartActivity.class);
+        intent.putExtra(KEY_IDENTIFICATION_HASH, hash);
+        fragment.startActivityForResult(intent, requestCode);
+    }
+
+    /**
+     * Starts the identification progress. Result will be returned in {@link android.support.v4.app.Fragment#onActivityResult(
+     * int, int, Intent) onActivityResult(int, int, Intent)}
+     *
+     * @param fragment    The {@link android.support.v4.app.Fragment Fragment} starting the identification.
+     * @param requestCode The request code for {@link android.support.v4.app.Fragment#onActivityResult(int, int, Intent)
+     *                    onActivityResult(int, int, Intent)}
+     * @param hash        The identification hash.
+     */
+    public void startIdentification(android.support.v4.app.Fragment fragment, int requestCode, String hash) {
+        Intent intent = new Intent(fragment.getActivity(), StartActivity.class);
+        intent.putExtra(KEY_IDENTIFICATION_HASH, hash);
+        fragment.startActivityForResult(intent, requestCode);
     }
 
     /**
