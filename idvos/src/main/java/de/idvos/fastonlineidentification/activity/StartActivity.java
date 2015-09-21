@@ -33,7 +33,7 @@ public class StartActivity extends BaseActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(de.idvos.fastonlineidentification.sdk.R.layout.activity_start);
-        setTitle(de.idvos.fastonlineidentification.sdk.R.string.start_title);
+        setTitle(de.idvos.fastonlineidentification.sdk.R.string.idvos_start_title);
         setMenuButton(R.drawable.ic_action_helpbutton, false);
 
         Intent intent = getIntent();
@@ -44,16 +44,16 @@ public class StartActivity extends BaseActivity implements OnClickListener {
         }
 
 //		TextView terms = (TextView) findViewById(R.id.text_terms);
-//		terms.setText(Html.fromHtml("<a href=\"www.google.com\">" + getString(R.string.start_terms) + "</a>"));
+//		terms.setText(Html.fromHtml("<a href=\"www.google.com\">" + getString(R.string.idvos_start_terms) + "</a>"));
 //		terms.setOnClickListener(this);
 
         findViewById(de.idvos.fastonlineidentification.sdk.R.id.button_start).setOnClickListener(this);
 
 
         String firstText = getString(
-                R.string.first_checkbox,
-                getString(R.string.terms_and_conditions),
-                getString(R.string.privacy_policy)
+                R.string.idvos_first_checkbox,
+                getString(R.string.idvos_terms_and_conditions),
+                getString(R.string.idvos_privacy_policy)
         );
 
         Spannable firstCheckboxSpannable = Spannable.Factory.getInstance().newSpannable(firstText);
@@ -74,9 +74,9 @@ public class StartActivity extends BaseActivity implements OnClickListener {
         };
 //        firstCheckboxSpannable.removeSpan(datenschutzbestimmungenClickableSpan);
 
-        String termsAndConditionsString = getString(R.string.terms_and_conditions);
+        String termsAndConditionsString = getString(R.string.idvos_terms_and_conditions);
         firstCheckboxSpannable.setSpan(agbClickableSpan, firstText.indexOf(termsAndConditionsString), firstText.indexOf(termsAndConditionsString) + termsAndConditionsString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        String privacyPolicyString = getString(R.string.privacy_policy);
+        String privacyPolicyString = getString(R.string.idvos_privacy_policy);
         firstCheckboxSpannable.setSpan(datenschutzbestimmungenClickableSpan, firstText.indexOf(privacyPolicyString), firstText.indexOf(privacyPolicyString) + privacyPolicyString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
         mFirstCheckbox = ((CheckBox) findViewById(R.id.first_checkbox));
@@ -108,12 +108,12 @@ public class StartActivity extends BaseActivity implements OnClickListener {
         if (id == R.id.button_start) {
             if (!mFirstCheckbox.isChecked()) {
                 YoYo.with(Techniques.Tada).playOn(mFirstCheckbox);
-                Toast toast = Toast.makeText(StartActivity.this, R.string.agb_error, Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(StartActivity.this, R.string.idvos_agb_error, Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP, 0, 0);
                 toast.show();
             } else if (!mSecondCheckbox.isChecked()) {
                 YoYo.with(Techniques.Tada).playOn(mSecondCheckbox);
-                Toast toast = Toast.makeText(StartActivity.this, R.string.agb_error, Toast.LENGTH_LONG);
+                Toast toast = Toast.makeText(StartActivity.this, R.string.idvos_agb_error, Toast.LENGTH_LONG);
                 toast.setGravity(Gravity.TOP, 0, 0);
                 toast.show();
             } else {

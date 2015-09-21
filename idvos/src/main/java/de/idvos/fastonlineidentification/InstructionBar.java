@@ -192,7 +192,7 @@ public class InstructionBar {
 	
 	public void showTanInstruction(Resources res) {
 		Instruction instruction = new Instruction();
-		instruction.messages = new String[] { res.getString(R.string.identification_wait_for_tan) };
+		instruction.messages = new String[] { res.getString(R.string.idvos_identification_wait_for_tan) };
 		showInstruction(instruction);
 	}
 	
@@ -200,7 +200,7 @@ public class InstructionBar {
 		Instruction instruction = new Instruction();
 		instruction.guideSize1 = mTanInput.getWidth();
 		instruction.guideSize2 = mTanInput.getHeight();
-		instruction.messages = new String[] { res.getString(R.string.identification_enter_tan) };
+		instruction.messages = new String[] { res.getString(R.string.idvos_identification_enter_tan) };
 		showInstruction(instruction);
 		mTanInput.setVisibility(View.VISIBLE);
 	}

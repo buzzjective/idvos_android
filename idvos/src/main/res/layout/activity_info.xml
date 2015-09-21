@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:editable="false"
                 android:inputType="none"
-                android:text="@string/info_info"
+                android:text="@string/idvos_info_info"
                 android:textColor="@color/info_text_color"
                 android:textSize="@dimen/info_text_size" />
 
@@ -46,7 +46,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/info_protection_title"
+                        android:text="@string/idvos_info_protection_title"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="#000000"
                         android:textStyle="bold" />
@@ -55,7 +55,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center|left"
-                        android:text="@string/info_protection" />
+                        android:text="@string/idvos_info_protection" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -79,7 +79,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/info_security_title"
+                        android:text="@string/idvos_info_security_title"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="#000000"
                         android:textStyle="bold" />
@@ -88,7 +88,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center|left"
-                        android:text="@string/info_security" />
+                        android:text="@string/idvos_info_security" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -112,7 +112,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/info_service_title"
+                        android:text="@string/idvos_info_service_title"
                         android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textColor="#000000"
                         android:textStyle="bold" />
@@ -121,7 +121,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center|left"
-                        android:text="@string/info_service" />
+                        android:text="@string/idvos_info_service" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -134,7 +134,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:text="@string/info_call"
+        android:text="@string/idvos_info_call"
         android:textSize="14sp" />
 
     <!-- <ImageView

@@ -119,7 +119,7 @@ public class TokBoxManager implements SessionListener {
             }
         }catch (Exception ex){
             ex.printStackTrace();
-            Toast.makeText(mContext, R.string.connection_failed_try_again,Toast.LENGTH_LONG).show();
+            Toast.makeText(mContext, R.string.idvos_connection_failed_try_again,Toast.LENGTH_LONG).show();
         }
 
 //        if(mPublisher != null)

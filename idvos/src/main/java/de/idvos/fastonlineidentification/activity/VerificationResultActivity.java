@@ -30,7 +30,7 @@ public class VerificationResultActivity extends Activity implements OnClickListe
 		Progress progress = intent.getParcelableExtra(Progress.KEY_IDENTIFICATION_PROGRESS);
 		
 		((TextView) findViewById(R.id.text_result)).setText(
-				progress.getVerificationResult()?R.string.verificationresult_success:R.string.verificationresult_failure
+				progress.getVerificationResult()?R.string.idvos_verificationresult_success:R.string.idvos_verificationresult_failure
 				);
 		findViewById(R.id.button_confirm).setOnClickListener(this);
 

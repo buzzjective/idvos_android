@@ -174,7 +174,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/please_wait"/>
+            android:text="@string/idvos_please_wait"/>
 
     </RelativeLayout>
 

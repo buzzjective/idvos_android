@@ -105,7 +105,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
 
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setCancelable(false);
-        mProgressDialog.setMessage(getString(R.string.please_wait_simple));
+        mProgressDialog.setMessage(getString(R.string.idvos_please_wait_simple));
 
         Intent intent = getIntent();
         mProgress = intent.getParcelableExtra(Progress.KEY_IDENTIFICATION_PROGRESS);
@@ -114,7 +114,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
 
         mState = mProgress.getmState();
         mInstructionBar.hideMask();
-        mTextFlow.setText(getString(R.string.please_wait));
+        mTextFlow.setText(getString(R.string.idvos_please_wait));
 
         PusherManager.getInstance(this);
     }
@@ -126,7 +126,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
     protected void onLeftMenuButtonClicked() {
 
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
-        alertBuilder.setMessage(R.string.cancel_session_confirm).setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
+        alertBuilder.setMessage(R.string.idvos_cancel_session_confirm).setPositiveButton(R.string.idvos_yes, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 TokBoxManager.getInstance(IdentificationActivity.this, IdentificationActivity.this).finishSession();
@@ -135,7 +135,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
                 setResult(RESULT_CANCELED);
                 finish();
             }
-        }).setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {
+        }).setNegativeButton(R.string.idvos_no, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
@@ -150,12 +150,12 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
     @Override
     protected void onRightMenuButtonClicked() {
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
-        alertBuilder.setTitle(R.string.identification_cancel_title).setMessage(R.string.identification_cancel_message).setPositiveButton(R.string.identification_cancel_positive, new DialogInterface.OnClickListener() {
+        alertBuilder.setTitle(R.string.idvos_identification_cancel_title).setMessage(R.string.idvos_identification_cancel_message).setPositiveButton(R.string.idvos_identification_cancel_positive, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(getString(R.string.phone))));
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(getString(R.string.idvos_phone))));
             }
-        }).setNegativeButton(R.string.identification_cancel_cancel, new DialogInterface.OnClickListener() {
+        }).setNegativeButton(R.string.idvos_identification_cancel_cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
@@ -183,7 +183,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
         }
         if (id == R.id.button_swap_light) {
             if (manager.isFrontCam()) {
-                Toast.makeText(IdentificationActivity.this, R.string.no_flashlight, Toast.LENGTH_SHORT).show();
+                Toast.makeText(IdentificationActivity.this, R.string.idvos_no_flashlight, Toast.LENGTH_SHORT).show();
             } else {
                 manager.toggleFlashLight();
             }
@@ -204,7 +204,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
                 startPusher();
                 return;
             case Progress.STATE_CONNECTING_TO_PUSHER:
-                mTextFlow.setText(R.string.connecting_message);
+                mTextFlow.setText(R.string.idvos_connecting_message);
 //                mTextFlow.setText("Connecting to PUSHER");
                 return;
             case Progress.STATE_CONNECTED_TO_PUSHER:
@@ -216,7 +216,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
                 TokBoxManager.getInstance(this, this).startTransmitting(mFrameSend);
                 return;
             case Progress.STATE_CONNECTING_TO_TOKBOX:
-                mTextFlow.setText(R.string.connecting_message);
+                mTextFlow.setText(R.string.idvos_connecting_message);
                 return;
             case Progress.STATE_CONNECTED_TO_TOKBOX:
 //                mTextFlow.setText("TokBox Connected");
@@ -381,7 +381,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
         mInstructionBar.showTanInstruction(getResources());
         TokBoxManager manager = TokBoxManager.getInstance(this, this);
         manager.swapCamera(); /*FRONT*/
-        mTextFlow.setText(getString(R.string.taninput_title));
+        mTextFlow.setText(getString(R.string.idvos_taninput_title));
         Log.e("onShowTanInstruction", mProgress.getmState() + "");
 
     }
@@ -389,7 +389,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
     @Override
     public void onTanGenerated() {
         startActivityForResult(SummaryActivity.getIntent(this).putExtra("hash", mProgress.getIdentificationHash()), 1337);
-        mTextFlow.setText(getString(R.string.identification_enter_tan));
+        mTextFlow.setText(getString(R.string.idvos_identification_enter_tan));
         mInstructionBar.showTanDialog(getResources());
         mTANInput.clean();
         Log.e("onTanGenerated", mProgress.getmState() + "");
@@ -474,7 +474,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 1337) {
-            mTextFlow.setText(getString(R.string.taninput_title));
+            mTextFlow.setText(getString(R.string.idvos_taninput_title));
         } else {
             Intent result = new Intent();
             result.putExtra(Progress.KEY_IDENTIFICATION_PROGRESS, mProgress);

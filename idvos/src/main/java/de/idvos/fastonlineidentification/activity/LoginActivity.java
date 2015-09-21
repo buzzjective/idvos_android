@@ -85,13 +85,13 @@ public class LoginActivity extends BaseActivity implements OnClickListener, Push
 
         mProgressDialog = new ProgressDialog(this);
         mProgressDialog.setCancelable(false);
-        mProgressDialog.setMessage(getString(R.string.please_wait_simple));
+        mProgressDialog.setMessage(getString(R.string.idvos_please_wait_simple));
 
 
         findViewById(R.id.button_call).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(getString(R.string.phone))));
+                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(getString(R.string.idvos_phone))));
             }
         });
 
@@ -100,7 +100,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener, Push
             @Override
             public void run() {
                 mProgressDialog.dismiss();
-                Toast.makeText(LoginActivity.this, R.string.timeout_error, Toast.LENGTH_LONG).show();
+                Toast.makeText(LoginActivity.this, R.string.idvos_timeout_error, Toast.LENGTH_LONG).show();
                 setResult(RESULT_CANCELED);
                 finish();
 
@@ -118,12 +118,12 @@ public class LoginActivity extends BaseActivity implements OnClickListener, Push
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.button_info_lastname) {
-            Toast.makeText(LoginActivity.this, R.string.surname_request, Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this, R.string.idvos_surname_request, Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (id == R.id.button_info_code) {
-            Toast.makeText(LoginActivity.this, R.string.reference_number_request, Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this, R.string.idvos_reference_number_request, Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -138,7 +138,7 @@ public class LoginActivity extends BaseActivity implements OnClickListener, Push
 
             if (lastName.equals("") || shortCode.equals("")) {
                 AlertDialog.Builder alertBuilder = new AlertDialog.Builder(LoginActivity.this);
-                alertBuilder.setMessage(R.string.incorrect_data).setPositiveButton(R.string.ok, null).setCancelable(true).create().show();
+                alertBuilder.setMessage(R.string.idvos_incorrect_data).setPositiveButton(R.string.idvos_ok, null).setCancelable(true).create().show();
                 return;
             }
 
