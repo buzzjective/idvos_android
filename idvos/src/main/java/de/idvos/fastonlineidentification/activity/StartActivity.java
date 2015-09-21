@@ -17,7 +17,6 @@ import com.daimajia.androidanimations.library.YoYo;
 
 import de.idvos.fastonlineidentification.sdk.R;
 import de.idvos.fastonlineidentification.sdk.IdentificationResult;
-import de.idvos.fastonlineidentification.sdk.IdvosFOI;
 import de.idvos.fastonlineidentification.sdk.IdvosSDK;
 
 public class StartActivity extends BaseActivity implements OnClickListener {
@@ -41,7 +40,7 @@ public class StartActivity extends BaseActivity implements OnClickListener {
         mIdentificationProgress = new Progress();
 
         if (intent.hasExtra(IdvosSDK.KEY_IDENTIFICATION_HASH)) {
-            mIdentificationProgress.setIdentificationHash(intent.getStringExtra(IdvosFOI.KEY_IDENTIFICATION_HASH));
+            mIdentificationProgress.setIdentificationHash(intent.getStringExtra(IdvosSDK.KEY_IDENTIFICATION_HASH));
         }
 
 //		TextView terms = (TextView) findViewById(R.id.text_terms);
