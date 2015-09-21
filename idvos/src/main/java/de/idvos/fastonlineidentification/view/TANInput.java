@@ -132,7 +132,7 @@ public class TANInput extends FrameLayout {
 		if (!failed) {
 			mBackground.setBackgroundColor(isValid?TAN_VALID_BACKGROUND:TAN_INVALID_BACKGROUND);
 			mTextStatus.setTextColor(isValid?TAN_VALID_TEXT_COLOR:TAN_INVALID_TEXT_COLOR);
-			mTextStatus.setText(isValid?R.string.taninput_valid:R.string.taninput_invalid);
+			mTextStatus.setText(isValid?R.string.idvos_taninput_valid:R.string.idvos_taninput_invalid);
 //			mTextStatus.setEnabled(true);
 
             if(!isValid) {
@@ -141,7 +141,7 @@ public class TANInput extends FrameLayout {
                     @Override
                     public void run() {
                         setInputEnabled(true);
-                        mTextStatus.setText(R.string.taninput_invalid);
+                        mTextStatus.setText(R.string.idvos_taninput_invalid);
                     }
                 }, 5000);
             }
@@ -149,7 +149,7 @@ public class TANInput extends FrameLayout {
 		else {
 //			mBackground.setBackgroundColor(TAN_UNKNOWN_BACKGROUND);
 			mTextStatus.setTextColor(TAN_UNKNOWN_TEXT_COLOR);
-			mTextStatus.setText(R.string.taninput_failed);
+			mTextStatus.setText(R.string.idvos_taninput_failed);
 			mTextStatus.setEnabled(true);
 		}
 		setInputEnabled(failed);
@@ -159,7 +159,7 @@ public class TANInput extends FrameLayout {
 		setInputEnabled(false);
 		mBackground.setBackgroundColor(TAN_UNKNOWN_BACKGROUND);
 		mTextStatus.setTextColor(TAN_UNKNOWN_TEXT_COLOR);
-		mTextStatus.setText(R.string.taninput_verifying);
+		mTextStatus.setText(R.string.idvos_taninput_verifying);
 		mTextStatus.setEnabled(false);
 	}
 	
@@ -221,7 +221,7 @@ public class TANInput extends FrameLayout {
 	
 	private void updateStatusText() {
 		mTextStatus.setEnabled(mIsTanValid);
-		mTextStatus.setText(mIsTanValid?getResources().getString(R.string.taninput_verify):" ");
+		mTextStatus.setText(mIsTanValid?getResources().getString(R.string.idvos_taninput_verify):" ");
 		
 		if (!mIsTanValid) {
 			mTextStatus.setTextColor(TAN_UNKNOWN_TEXT_COLOR);

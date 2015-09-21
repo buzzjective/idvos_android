@@ -39,7 +39,7 @@
                 android:textStyle="bold"
                 android:gravity="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/slogan"/>
+                android:text="@string/idvos_slogan"/>
 
 
 
@@ -52,7 +52,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:text="@string/bigger_slogan"
+                android:text="@string/idvos_bigger_slogan"
                 android:padding="5dp"
                 android:textSize="12sp"
                 android:textColor="#000000"
@@ -70,7 +70,7 @@
                 android:layout_height="match_parent"
                 android:textSize="12sp"
                 android:layout_below="@id/linear_container"
-                android:text="@string/start_items"/>
+                android:text="@string/idvos_start_items"/>
 
 
             <LinearLayout
@@ -99,13 +99,13 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:textColor="#000000"
-                        android:text="@string/practical_title"/>
+                        android:text="@string/idvos_practical_title"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:textSize="11sp"
                         android:gravity="center"
-                        android:text="@string/practical"
+                        android:text="@string/idvos_practical"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
@@ -129,13 +129,13 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:textColor="#000000"
-                        android:text="@string/fast_title"/>
+                        android:text="@string/idvos_fast_title"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:textSize="11sp"
                         android:gravity="center"
-                        android:text="@string/fast"
+                        android:text="@string/idvos_fast"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
@@ -159,13 +159,13 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:textColor="#000000"
-                        android:text="@string/secure_title"/>
+                        android:text="@string/idvos_secure_title"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:textSize="11sp"
                         android:gravity="center"
-                        android:text="@string/secure"
+                        android:text="@string/idvos_secure"
                         android:layout_height="wrap_content" />
 
                 </LinearLayout>
@@ -185,7 +185,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="@dimen/start_box_margin"
-        android:text="@string/start_accept"/>
+        android:text="@string/idvos_start_accept"/>
     
    <!-- <TextView
         android:layout_width="match_parent"
@@ -206,7 +206,7 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:textSize="12sp"
-            android:text="@string/first_checkbox"/>
+            android:text="@string/idvos_first_checkbox"/>
 
         <de.idvos.fastonlineidentification.view.NoPersistentTextCheckBox
             android:id="@+id/second_checkbox"
@@ -214,7 +214,7 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:textSize="12sp"
-            android:text="@string/second_checkbox"/>
+            android:text="@string/idvos_second_checkbox"/>
 
     </LinearLayout>
     
@@ -225,7 +225,7 @@
         android:layout_above="@id/text_terms"
         android:layout_marginTop="@dimen/start_box_margin"
         android:textSize="@dimen/start_terms_text_size"
-        android:text="@string/start_terms_desc"/>-->
+        android:text="@string/idvos_start_terms_desc"/>-->
 
 
 </RelativeLayout>

@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:textSize="17sp"
         android:textColor="#333"
-        android:text="@string/terms"/>
+        android:text="@string/idvos_terms"/>
 
 </ScrollView>
 -->

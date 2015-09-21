@@ -27,7 +27,7 @@
             android:layout_centerHorizontal="true"
             android:textSize="@dimen/login_title_text_size"
             android:textColor="@color/login_title_text_color"
-            android:text="@string/login_title"/>
+            android:text="@string/idvos_login_title"/>
 
         <LinearLayout
             android:id="@+id/inputs"
@@ -58,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@id/button_info_lastname"
                     android:layout_centerVertical="true"
-                    android:hint="@string/login_lastname"
+                    android:hint="@string/idvos_login_lastname"
                     android:inputType="textPersonName"
                     />--><EditText
                 android:id="@+id/edit_lastname"
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@id/button_info_lastname"
                 android:layout_centerVertical="true"
-                android:hint="@string/login_lastname"
+                android:hint="@string/idvos_login_lastname"
                 android:inputType="textPersonName|textCapSentences"
                 android:text=""
                 />
@@ -97,7 +97,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@id/button_info_code"
                     android:layout_centerVertical="true"
-                    android:hint="@string/login_code"
+                    android:hint="@string/idvos_login_code"
                     android:inputType="textCapCharacters"
                     />-->
                 <EditText
@@ -107,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toLeftOf="@id/button_info_code"
                     android:layout_centerVertical="true"
-                    android:hint="@string/login_code"
+                    android:hint="@string/idvos_login_code"
                     android:inputType="textCapCharacters"
                     android:text=""
                     />
@@ -123,7 +123,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:text="@string/login_start"/>
+            android:text="@string/idvos_login_start"/>
 
         <ScrollView
             style="@style/box"
@@ -138,7 +138,7 @@
                 android:textSize="@dimen/login_desc_text_size"
                 android:textColor="@color/login_desc_text_color"
                 android:lineSpacingExtra="@dimen/login_desc_linespacing_extra"
-                android:text="@string/login_desc"/>
+                android:text="@string/idvos_login_desc"/>
 
         </ScrollView>
 
@@ -154,7 +154,7 @@
         android:layout_height="wrap_content"
         android:textSize="14sp"
         android:layout_alignParentBottom="true"
-        android:text="@string/info_call"/>
+        android:text="@string/idvos_info_call"/>
 
 
 

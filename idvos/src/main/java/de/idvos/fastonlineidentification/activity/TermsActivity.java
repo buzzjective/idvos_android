@@ -39,10 +39,10 @@ public class TermsActivity extends BaseActivity {
 
         if (getIntent().getIntExtra("text", -1) > 0) {
             ((WebView) findViewById(R.id.webview)).loadUrl(urlPrivacy);
-            setTitle(getString(R.string.privacy_title));
+            setTitle(getString(R.string.idvos_privacy_title));
         } else {
             ((WebView) findViewById(R.id.webview)).loadUrl(urlTerms);
-            setTitle(getString(R.string.terms_and_conditions));
+            setTitle(getString(R.string.idvos_terms_and_conditions));
         }
 
 
