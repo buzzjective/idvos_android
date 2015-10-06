@@ -53,7 +53,7 @@
     <string name="idvos_cancel_session_confirm">Wollen Sie die Videositzung wirklich beenden?</string>
     <string name="idvos_yes">Ja</string>
     <string name="idvos_no">Nein</string>
-    <string name="idvos_phone">tel:+493020849261</string>
+    <string name="idvos_phone">tel: +493020849261</string>
     <string name="idvos_no_flashlight">Frontkamera hat keine Blitzlicht!</string>
     <string name="idvos_connecting_message">Verbindung herstellen…</string>
     <string name="idvos_timeout_error">Fehler beim Server in der richtigen Zeit verbinden</string>
@@ -84,7 +84,7 @@
         </ul></string>
     <string name="idvos_start_items"><ul style="list-style-type:disc">
             <li>Keine Weitergabe Ihrer Daten an Externe \n</li>
-            <li> Übermittlung der Daten nur auf deutschen Servern \n</li>
-            <li> Einhaltung höchster Sicherheitsstandards</li>
+            <li>Übermittlung der Daten nur auf deutschen Servern \n</li>
+            <li>Einhaltung höchster Sicherheitsstandards</li>
         </ul></string>
 </resources>
