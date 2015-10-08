@@ -14,34 +14,56 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import org.apache.wink.json4j.OrderedJSONObject;
 
-import de.idvos.fastonlineidentification.sdk.R;
+import java.util.HashMap;
+import java.util.Iterator;
+
+import de.idvos.fastonlineidentification.ResponseConstants;
 import de.idvos.fastonlineidentification.config.AppConfig;
 import de.idvos.fastonlineidentification.sdk.IdvosSDK;
+import de.idvos.fastonlineidentification.sdk.R;
 
 /**
- * Created by mohammadrezanajafi on 2/3/15.
+ * Displays summary as a result of agent checks.
  */
 public class SummaryActivity extends BaseActivity {
+
+
+    TableLayout summaryTableLayout;
+    ProgressBar summaryProgressBar;
+    private static final HashMap<String, Integer> keyToStringResourceMap = new HashMap<>();
 
     public static Intent getIntent(Context context) {
         Intent intent = new Intent(context, SummaryActivity.class);
         return intent;
     }
 
-    TableLayout summaryTableLayout;
-    ProgressBar summaryProgressBar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_summary);
         setMenuButton(R.drawable.ic_action_bac, true);
-        summaryProgressBar = (ProgressBar)findViewById(R.id.summary_progress);
-        summaryTableLayout = (TableLayout)findViewById(R.id.summary_table);
+        summaryProgressBar = (ProgressBar) findViewById(R.id.summary_progress);
+        summaryTableLayout = (TableLayout) findViewById(R.id.summary_table);
         startAPICall(getIntent().getStringExtra("hash"));
+
+        populate();
+    }
+
+    private void populate() {
+        keyToStringResourceMap.put(ResponseConstants.MOBILE_PHONE, R.string.idvos_response_phone);
+        keyToStringResourceMap.put(ResponseConstants.EMAIL, R.string.idvos_response_mail);
+        keyToStringResourceMap.put(ResponseConstants.NAME, R.string.idvos_response_name);
+        keyToStringResourceMap.put(ResponseConstants.SURNAME, R.string.idvos_response_surname);
+        keyToStringResourceMap.put(ResponseConstants.DATE_OF_BIRTH, R.string.idvos_response_date_of_birth);
+        keyToStringResourceMap.put(ResponseConstants.PLACE_OF_BIRTH, R.string.idvos_response_place_of_birth);
+        keyToStringResourceMap.put(ResponseConstants.NATIONALITY, R.string.idvos_response_nationality);
+        keyToStringResourceMap.put(ResponseConstants.ADDRESS, R.string.idvos_response_address);
+        keyToStringResourceMap.put(ResponseConstants.CITY, R.string.idvos_response_city);
+        keyToStringResourceMap.put(ResponseConstants.POSTAL_CODE, R.string.idvos_response_post_code);
+        keyToStringResourceMap.put(ResponseConstants.GENDER, R.string.idvos_response_gender);
+        keyToStringResourceMap.put(ResponseConstants.COUNTRY, R.string.idvos_response_country);
     }
 
     @Override
@@ -50,48 +72,51 @@ public class SummaryActivity extends BaseActivity {
         super.onBackPressed();
     }
 
-    private void startAPICall(String idHash){
+    private void startAPICall(String idHash) {
         summaryProgressBar.setVisibility(View.VISIBLE);
         String serverUrl = IdvosSDK.getInstance().getMode().getEndpoint() + "api/v1/mobile/";
-        StringRequest request = new StringRequest(Request.Method.GET,serverUrl + "identifications/" + idHash + "/summary",new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
+        StringRequest request = new StringRequest(
+                Request.Method.GET,
+                serverUrl + "identifications/" + idHash + "/summary",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
 
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-//                    addRow("title",jsonObject.getString("title"));
-//                    addRow("address_title",jsonObject.getString("address_title"));
-                    addRow(getString(R.string.idvos_response_phone),jsonObject.getString("mobile_phone"));
-                    addRow(getString(R.string.idvos_response_mail),jsonObject.getString("email"));
-                    addRow(getString(R.string.idvos_response_name),jsonObject.getString("name"));
-                    addRow(getString(R.string.idvos_response_surname),jsonObject.getString("surname"));
+                        try {
+                            OrderedJSONObject jsonObject = new OrderedJSONObject(response);
 
-                    addRow(getString(R.string.idvos_response_date_of_birth),jsonObject.getString("date_of_birth"));
-                    addRow(getString(R.string.idvos_response_place_of_birth),jsonObject.getString("place_of_birth"));
-                    addRow(getString(R.string.idvos_response_nationality),jsonObject.getString("nationality"));
-                    addRow(getString(R.string.idvos_response_address),jsonObject.getString("address"));
-                    addRow(getString(R.string.idvos_response_city),jsonObject.getString("city"));
-                    addRow(getString(R.string.idvos_response_post_code),jsonObject.getString("postal_code"));
-                    addRow(getString(R.string.idvos_response_gender),jsonObject.getString("gender"));
-                    addRow(getString(R.string.idvos_response_country),jsonObject.getString("country"));
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                            for (Iterator iterator = jsonObject.getOrder(); iterator.hasNext(); ) {
+                                String key = (String) iterator.next();
+                                if (keyToStringResourceMap.containsKey(key)) {
+                                    addRow(
+                                            getString(keyToStringResourceMap.get(key)),
+                                            jsonObject.getString(key)
+                                    );
+                                } else {
+                                    addRow(key, jsonObject.getString(key));
+                                }
+                            }
+                        } catch (org.apache.wink.json4j.JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        summaryProgressBar.setVisibility(View.GONE);
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+
+                    }
                 }
-
-                summaryProgressBar.setVisibility(View.GONE);
-
-            }
-        },new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-
-            }
-        });
+        );
         AppConfig.getInstance().addToRequestQueue(request);
     }
-    private void addRow(String key,String value){
-        TableRow row= new TableRow(this);
+
+    private void addRow(String key, String value) {
+        TableRow row = new TableRow(this);
         TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT);
 //        lp.topMargin = 200;
         row.setLayoutParams(lp);
@@ -100,14 +125,14 @@ public class SummaryActivity extends BaseActivity {
 
         TextView keyView = new TextView(this);
 //        keyView.setBackgroundColor(Color.RED);
-        keyView.setPadding(5,5,5,5);
-        keyView.setTextAppearance(this,android.R.style.TextAppearance_Medium);
+        keyView.setPadding(5, 5, 5, 5);
+        keyView.setTextAppearance(this, android.R.style.TextAppearance_Medium);
         keyView.setText(key);
 
         TextView valueView = new TextView(this);
 //        valueView.setBackgroundColor(Color.GRAY);
-        valueView.setPadding(5,5,5,5);
-        valueView.setTextAppearance(this,android.R.style.TextAppearance_Medium);
+        valueView.setPadding(5, 5, 5, 5);
+        valueView.setTextAppearance(this, android.R.style.TextAppearance_Medium);
         valueView.setText(value);
 
         row.addView(keyView);
