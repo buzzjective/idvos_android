@@ -33,6 +33,7 @@ import de.idvos.fastonlineidentification.PusherManager;
 import de.idvos.fastonlineidentification.PusherManager.PusherCallback;
 import de.idvos.fastonlineidentification.TokBoxManager;
 import de.idvos.fastonlineidentification.TokBoxManager.TokBoxCallback;
+import de.idvos.fastonlineidentification.WaitingTimeTracker;
 import de.idvos.fastonlineidentification.config.AppConfig;
 import de.idvos.fastonlineidentification.network.JsonObjectRequest;
 import de.idvos.fastonlineidentification.network.JsonObjectRequest.JsonObjectRequestCallback;
@@ -40,6 +41,7 @@ import de.idvos.fastonlineidentification.network.NetworkRequest;
 import de.idvos.fastonlineidentification.network.RequestQueue;
 import de.idvos.fastonlineidentification.network.VoidRequest;
 import de.idvos.fastonlineidentification.network.VoidRequest.VoidRequestResultCallback;
+import de.idvos.fastonlineidentification.sdk.IdentificationResult;
 import de.idvos.fastonlineidentification.sdk.IdvosSDK;
 import de.idvos.fastonlineidentification.sdk.R;
 import de.idvos.fastonlineidentification.view.ProgressBarDeterminate;
@@ -50,17 +52,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
         OnCheckTANListener {
 
     private static final String TAG = "IdentificationActivity";
-
-    public String tmp = "";
     private static final String TAN_CODE = "tan_code";
-
-    protected static Intent getIntent(Context context, Progress progress) {
-        Intent intent = new Intent(context, IdentificationActivity.class);
-
-        intent.putExtra(Progress.KEY_IDENTIFICATION_PROGRESS, progress);
-
-        return intent;
-    }
 
     private TextView mTextFlow;
     private InstructionBar mInstructionBar;
@@ -68,16 +60,15 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
     private RelativeLayout mFrameRecieve;
     private TextView mFrameRecieveTV;
     private TANInput mTANInput;
-
     private ProgressDialog mProgressDialog;
-
     private RequestQueue mRequestQueue;
     private Progress mProgress;
     private int mState;
+    private String serverUrl;
+    private WaitingTimeTracker waitingTimeTracker;
 
     ProgressBarDeterminate mProgressBarDeterminate;
 
-    private String serverUrl;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -117,35 +108,70 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
         mTextFlow.setText(getString(R.string.idvos_please_wait));
 
         PusherManager.getInstance(this);
+
+        waitingTimeTracker = new WaitingTimeTracker(this);
     }
 
-    ;
+    protected static Intent getIntent(Context context, Progress progress) {
+        Intent intent = new Intent(context, IdentificationActivity.class);
 
+        intent.putExtra(Progress.KEY_IDENTIFICATION_PROGRESS, progress);
+
+        return intent;
+    }
 
     @Override
     protected void onLeftMenuButtonClicked() {
+        showWarningDialog();
+    }
 
+    @Override
+    public void onBackPressed() {
+        showWarningDialog();
+    }
+
+    private void showWarningDialog() {
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
-        alertBuilder.setMessage(R.string.idvos_cancel_session_confirm).setPositiveButton(R.string.idvos_yes, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                TokBoxManager.getInstance(IdentificationActivity.this, IdentificationActivity.this).finishSession();
-                PusherManager.getInstance(IdentificationActivity.this).disconnect();
+        alertBuilder
+                .setMessage(R.string.idvos_cancel_session_confirm)
+                .setPositiveButton(R.string.idvos_yes, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        waitingTimeTracker.endTracking();
 
-                setResult(RESULT_CANCELED);
-                finish();
-            }
-        }).setNegativeButton(R.string.idvos_no, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
-            }
-        }).create().show();
+                        TokBoxManager.getInstance(IdentificationActivity.this, IdentificationActivity.this).finishSession();
+                        PusherManager.getInstance(IdentificationActivity.this).disconnect();
+
+                        IdentificationResult identificationResult = new IdentificationResult(
+                                false,
+                                null,
+                                new WaitingTimeTracker(IdentificationActivity.this).getWaitingTimeMillis()
+                        );
+
+                        Intent result = new Intent();
+                        result.putExtra(
+                                IdentificationResult.IDENTIFICATION_RESULT,
+                                identificationResult
+                        );
+                        setResult(RESULT_CANCELED, result);
+
+                        finish();
+                    }
+                })
+                .setNegativeButton(R.string.idvos_no, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.dismiss();
+                    }
+                })
+                .create()
+                .show();
 
 
 //        onShowTanInstruction();
         mInstructionBar.hideMask();
     }
+
 
     @Override
     protected void onRightMenuButtonClicked() {
@@ -224,11 +250,11 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
                 signalReady();
                 return;
             case Progress.STATE_SIGNALING_READY:
+                new WaitingTimeTracker(this).startTracking();
                 return;
             case Progress.STATE_READY:
 //                mTextFlow.setText("Wir bitten um ein wenig Geduld. Ihre Identifizierung wird gleich gestartet..");
                 mProgressDialog.dismiss();
-                // TODO
                 return;
             case Progress.STATE_FAILED:
                 mProgressDialog.dismiss();
