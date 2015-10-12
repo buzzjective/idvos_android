@@ -41,6 +41,9 @@ public class WaitingTimeTracker {
                 .apply();
     }
 
+    /**
+     * @return waiting time of customer in milliseconds
+     */
     public long getWaitingTimeMillis(){
         long start = sharedPreferences.getLong(WAITING_TIME_START, -1);
         long end = sharedPreferences.getLong(WAITING_TIME_END, 0);
