@@ -5,6 +5,7 @@ import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.format.DateFormat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,8 +18,6 @@ import de.idvos.fastonlineidentification.sdk.IdvosSDK;
 public class MainActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE = 100;
-    private static final String HASH = "mxqC1jsvV4uaL_zRtFn7";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,13 +43,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode != REQUEST_CODE || resultCode != RESULT_OK){
+        if (requestCode != REQUEST_CODE){
             return;
         }
         IdentificationResult result = data.getParcelableExtra(IdentificationResult.IDENTIFICATION_RESULT);
         Toast.makeText(this,
                 "Success: " + String.valueOf(result.isSuccessful() + "; " +
-                "Transaction ID: " + result.getTransactionId()),
+                "Transaction ID: " + result.getTransactionId()) + "; " +
+                "Waiting time: " + result.getWaitingTimeMillis() / 1000,
                 Toast.LENGTH_LONG
         ).show();
     }

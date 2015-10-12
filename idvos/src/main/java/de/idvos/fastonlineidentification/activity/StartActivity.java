@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
+import de.idvos.fastonlineidentification.WaitingTimeTracker;
 import de.idvos.fastonlineidentification.sdk.R;
 import de.idvos.fastonlineidentification.sdk.IdentificationResult;
 import de.idvos.fastonlineidentification.sdk.IdvosSDK;
@@ -136,19 +137,33 @@ public class StartActivity extends BaseActivity implements OnClickListener {
                     }
                 }
                 return;
+
             case REQUEST_START_IDENTIFICATION:
                 if (resultCode == RESULT_OK) {
                     mIdentificationProgress = data.getParcelableExtra(Progress.KEY_IDENTIFICATION_PROGRESS);
                     Intent result = new Intent();
                     IdentificationResult identificationResult = new IdentificationResult(
                             mIdentificationProgress.getVerificationResult(),
-                            mIdentificationProgress.getTransactionId()
+                            mIdentificationProgress.getTransactionId(),
+                            new WaitingTimeTracker(this).getWaitingTimeMillis()
                     );
                     result.putExtra(IdentificationResult.IDENTIFICATION_RESULT, identificationResult);
                     setResult(RESULT_OK, result);
                     finish();
                 }
                 if (resultCode == RESULT_CANCELED){
+                    IdentificationResult identificationResult = new IdentificationResult(
+                            false,
+                            null,
+                            new WaitingTimeTracker(this).getWaitingTimeMillis()
+                    );
+
+                    Intent result = new Intent();
+                    result.putExtra(
+                            IdentificationResult.IDENTIFICATION_RESULT,
+                            identificationResult
+                    );
+                    setResult(RESULT_CANCELED, result);
                     finish();
                 }
         }
