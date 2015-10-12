@@ -1,7 +1,7 @@
 package de.idvos.fastonlineidentification;
 
 /**
- * Created by biovamp on 08.10.15.
+ * Contains constants from server response
  */
 public interface ResponseConstants {
     String FILTER_TITLE = "title";
