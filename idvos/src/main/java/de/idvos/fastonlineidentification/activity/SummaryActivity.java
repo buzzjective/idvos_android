@@ -64,6 +64,7 @@ public class SummaryActivity extends BaseActivity {
         keyToStringResourceMap.put(ResponseConstants.POSTAL_CODE, R.string.idvos_response_post_code);
         keyToStringResourceMap.put(ResponseConstants.GENDER, R.string.idvos_response_gender);
         keyToStringResourceMap.put(ResponseConstants.COUNTRY, R.string.idvos_response_country);
+        keyToStringResourceMap.put(ResponseConstants.ADDRESS_TITLE, R.string.idvos_response_address_title);
     }
 
     @Override
@@ -92,7 +93,7 @@ public class SummaryActivity extends BaseActivity {
                                             getString(keyToStringResourceMap.get(key)),
                                             jsonObject.getString(key)
                                     );
-                                } else {
+                                } else if (!key.equals(ResponseConstants.FILTER_TITLE)){
                                     addRow(key, jsonObject.getString(key));
                                 }
                             }

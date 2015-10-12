@@ -4,6 +4,9 @@ package de.idvos.fastonlineidentification;
  * Created by biovamp on 08.10.15.
  */
 public interface ResponseConstants {
+    String FILTER_TITLE = "title";
+
+    String ADDRESS_TITLE = "address_title";
     String MOBILE_PHONE = "mobile_phone";
     String EMAIL = "email";
     String NAME = "name";

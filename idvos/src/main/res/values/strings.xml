@@ -76,6 +76,7 @@
     <string name="idvos_response_post_code">Postal code</string>
     <string name="idvos_response_gender">Sex</string>
     <string name="idvos_response_country">Country</string>
+    <string name="idvos_response_address_title">Title</string>
     <string name="idvos_login_desc">What is required for the identification?\n\nFor the identification you need:\n
         <ul style="list-style-type:disc">
             <li>a stable Internet connection \n</li>
