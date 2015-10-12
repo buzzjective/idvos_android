@@ -8,6 +8,6 @@ public class ExampleApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        IdvosSDK.initialize(this, IdvosSDK.Mode.TEST);
+        IdvosSDK.initialize(this, IdvosSDK.Mode.PRODUCTION);
     }
 }
