@@ -13,5 +13,5 @@ And the dependency:
     <dependency>
         <groupId>com.github.buzzjective</groupId>
         <artifactId>idvos_android</artifactId>
-        <version>0.4</version>
+        <version>0.5</version>
     </dependency>
