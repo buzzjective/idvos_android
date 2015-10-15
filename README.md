@@ -13,7 +13,7 @@ Add this code to your module’s build.gradle
     apply plugin: 'crashlytics'
 
     dependencies {
-        compile 'com.github.buzzjective:idvos_android:0.4'
+        compile 'com.github.buzzjective:idvos_android:0.5'
     }
 
 Add those dependencies to root build.gradle buildscript:
@@ -61,6 +61,8 @@ You'll recive a result in `onActivityResult`
         }
         IdentificationResult result = data.getParcelableExtra(IdentificationResult.IDENTIFICATION_RESULT);
     }
+
+`IdentificationResult` contains customer's waiting time in milliseconds. You can get those using `IdentificationResult.getWaitingTimeMillis();`
 
 Possible ERROR_CODES:
     
