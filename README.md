@@ -56,13 +56,20 @@ You'll recive a result in `onActivityResult`
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode != REQUEST_CODE || resultCode != RESULT_OK){
+        if (requestCode != REQUEST_CODE){
             return;
         }
         IdentificationResult result = data.getParcelableExtra(IdentificationResult.IDENTIFICATION_RESULT);
     }
 
-`IdentificationResult` contains customer's waiting time in milliseconds. You can get those using `IdentificationResult.getWaitingTimeMillis();`
+`IdentificationResult` has:
+
+`long getWaitingTimeMillis();` - returns customer's waiting time in milliseconds.
+
+`boolean isSuccessful();` - true if identification was successful, false - otherwise.
+
+`String getTransactionId();` - returns transaction id.
+
 
 Possible ERROR_CODES:
     
