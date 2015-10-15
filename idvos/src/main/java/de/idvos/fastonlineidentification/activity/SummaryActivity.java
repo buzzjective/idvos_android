@@ -16,8 +16,10 @@ import com.android.volley.toolbox.StringRequest;
 
 import org.apache.wink.json4j.OrderedJSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 import de.idvos.fastonlineidentification.ResponseConstants;
 import de.idvos.fastonlineidentification.config.AppConfig;
@@ -33,6 +35,7 @@ public class SummaryActivity extends BaseActivity {
     TableLayout summaryTableLayout;
     ProgressBar summaryProgressBar;
     private static final HashMap<String, Integer> keyToStringResourceMap = new HashMap<>();
+    private static final List<String> filterList = new ArrayList<>();
 
     public static Intent getIntent(Context context) {
         Intent intent = new Intent(context, SummaryActivity.class);
@@ -64,7 +67,10 @@ public class SummaryActivity extends BaseActivity {
         keyToStringResourceMap.put(ResponseConstants.POSTAL_CODE, R.string.idvos_response_post_code);
         keyToStringResourceMap.put(ResponseConstants.GENDER, R.string.idvos_response_gender);
         keyToStringResourceMap.put(ResponseConstants.COUNTRY, R.string.idvos_response_country);
-        keyToStringResourceMap.put(ResponseConstants.ADDRESS_TITLE, R.string.idvos_response_address_title);
+        keyToStringResourceMap.put(ResponseConstants.HONORIFIC, R.string.idvos_response_honorific);
+
+        filterList.add(ResponseConstants.FILTER_TITLE);
+        filterList.add(ResponseConstants.FILTER_ADDRESS_TITLE);
     }
 
     @Override
@@ -93,7 +99,7 @@ public class SummaryActivity extends BaseActivity {
                                             getString(keyToStringResourceMap.get(key)),
                                             jsonObject.getString(key)
                                     );
-                                } else if (!key.equals(ResponseConstants.FILTER_TITLE)){
+                                } else if (!filterList.contains(key)){
                                     addRow(key, jsonObject.getString(key));
                                 }
                             }

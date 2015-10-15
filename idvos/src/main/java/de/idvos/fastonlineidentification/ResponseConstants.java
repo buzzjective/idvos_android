@@ -5,8 +5,8 @@ package de.idvos.fastonlineidentification;
  */
 public interface ResponseConstants {
     String FILTER_TITLE = "title";
+    String FILTER_ADDRESS_TITLE = "address_title";
 
-    String ADDRESS_TITLE = "address_title";
     String MOBILE_PHONE = "mobile_phone";
     String EMAIL = "email";
     String NAME = "name";
@@ -19,4 +19,5 @@ public interface ResponseConstants {
     String POSTAL_CODE = "postal_code";
     String GENDER = "gender";
     String COUNTRY = "country";
+    String HONORIFIC = "honorific";
 }
