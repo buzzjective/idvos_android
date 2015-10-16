@@ -13,7 +13,7 @@ Add this code to your module’s build.gradle
     apply plugin: 'crashlytics'
 
     dependencies {
-        compile 'com.github.buzzjective:idvos_android:0.4'
+        compile 'com.github.buzzjective:idvos_android:0.5'
     }
 
 Add those dependencies to root build.gradle buildscript:
@@ -56,11 +56,20 @@ You'll recive a result in `onActivityResult`
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode != REQUEST_CODE || resultCode != RESULT_OK){
+        if (requestCode != REQUEST_CODE){
             return;
         }
         IdentificationResult result = data.getParcelableExtra(IdentificationResult.IDENTIFICATION_RESULT);
     }
+
+`IdentificationResult` has:
+
+`long getWaitingTimeMillis();` - returns customer's waiting time in milliseconds.
+
+`boolean isSuccessful();` - true if identification was successful, false - otherwise.
+
+`String getTransactionId();` - returns transaction id.
+
 
 Possible ERROR_CODES:
     
