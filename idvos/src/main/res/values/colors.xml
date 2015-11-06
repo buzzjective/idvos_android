@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    
-    <color name="titlebar_background">#3366ff</color>
-    <color name="titlebar_title_text_color">#fff</color>
+
+    <color name="color_accent">#009dcc</color>
+    <color name="color_primary">#00617e</color>
+
+    <color name="titlebar_background">@color/color_accent</color>
+    <color name="white_text_color">#fff</color>
     
     <color name="box_stroke">#aaa</color>
     <color name="box_solid">#aadddddd</color>
-    <color name="box_text_color">#333</color>
+    <color name="box_text_color">@color/color_primary</color>
 
-    <color name="button_text_color">#fff</color>
-    <color name="button_green_background">#33bb33</color>
-    <color name="button_green_background_pressed">#119911</color>
-    <color name="button_blue_background">#3366ff</color>
-    <color name="button_blue_background_pressed">#1144dd</color>
+    <color name="button_primary_text_color">@color/color_primary</color>
+    <color name="button_primary_stroke">@color/color_primary</color>
+    <color name="button_primary_background">#ccebf5</color>
+    <color name="button_primary_background_pressed">#b7d3dc</color>
+
     <color name="button_gray_background">#666666</color>
     <color name="button_gray_background_pressed">#555555</color>
     
@@ -23,7 +26,7 @@
     <color name="login_input_text_color_hint">#888</color>
     <color name="login_desc_text_color">#333</color>
     
-    <color name="identification_instructionbar_background">#102D89</color>
+    <color name="identification_instructionbar_background">@color/color_primary</color>
     <color name="identification_instruction_counter">#fff</color>
     <color name="identification_instruction_text">#fff</color>
     <color name="identification_cam_mask">#b2000000</color>

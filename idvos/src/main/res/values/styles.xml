@@ -1,5 +1,9 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <style name="idvosTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorAccent">@color/color_accent</item>
+    </style>
+
     <style name="box">
         <item name="android:paddingLeft">@dimen/box_padding_horizontal</item>
         <item name="android:paddingRight">@dimen/box_padding_horizontal</item>
@@ -13,7 +17,7 @@
     
     <style name="button">
         <item name="android:textSize">@dimen/button_text_size</item>
-        <item name="android:textColor">@color/button_text_color</item>
+        <item name="android:textColor">@color/button_primary_text_color</item>
         <item name="android:paddingTop">@dimen/button_padding_vertical</item>
         <item name="android:paddingBottom">@dimen/button_padding_vertical</item>
         <item name="android:gravity">center</item>
@@ -29,6 +33,7 @@
     
     <style name="gray_button" parent="@style/button">
         <item name="android:background">@drawable/button_gray_background</item>
+        <item name="android:textColor">@color/white_text_color</item>
     </style>
     
     <style name="login_edittext">

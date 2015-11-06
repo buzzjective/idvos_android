@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="@dimen/titlebar_title_text_size"
-            android:textColor="@color/titlebar_title_text_color"/>
+            android:textColor="@color/white_text_color"/>
         
         <ImageView
             android:id="@+id/tabbar_button_left"

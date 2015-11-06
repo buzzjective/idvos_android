@@ -21,35 +21,42 @@
         <activity
             android:name="de.idvos.fastonlineidentification.activity.StartActivity"
             android:label="@string/idvos_app_name"
+            android:theme="@style/idvosTheme"
             android:screenOrientation="portrait"/>
        	
         <activity
             android:name="de.idvos.fastonlineidentification.activity.TermsActivity"
             android:label="@string/idvos_terms_label"
+            android:theme="@style/idvosTheme"
             android:screenOrientation="portrait"/>
         
         <activity
             android:name="de.idvos.fastonlineidentification.activity.InfoActivity"
             android:label="@string/idvos_info_label"
+            android:theme="@style/idvosTheme"
             android:screenOrientation="portrait"/>
         
         <activity
             android:name="de.idvos.fastonlineidentification.activity.LoginActivity"
             android:label="@string/idvos_login_label"
             android:screenOrientation="portrait"
+            android:theme="@style/idvosTheme"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan"/>
         
         <activity
             android:name="de.idvos.fastonlineidentification.activity.IdentificationActivity"
             android:label="@string/idvos_identification_title"
+            android:theme="@style/idvosTheme"
             android:screenOrientation="portrait"/>
         <activity
             android:name="de.idvos.fastonlineidentification.activity.SummaryActivity"
             android:label="@string/idvos_identification_summary"
+            android:theme="@style/idvosTheme"
             android:screenOrientation="portrait"/>
         
         <activity
             android:name="de.idvos.fastonlineidentification.activity.VerificationResultActivity"
+            android:theme="@style/idvosTheme"
             android:screenOrientation="portrait"/>
 
         <meta-data android:name="com.crashlytics.ApiKey" android:value="970432a83218aa34b35f8ac01d9b2939a963f3d8"/>
