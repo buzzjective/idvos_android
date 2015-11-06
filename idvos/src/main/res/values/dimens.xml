@@ -63,5 +63,7 @@
     <dimen name="verificationresult_image_size">160dp</dimen>
     <dimen name="verificationresult_result_margin_top">20dp</dimen>
     <dimen name="verificationresult_result_text_size">24sp</dimen>
+
+    <dimen name="button_stroke_width">1dp</dimen>
     
 </resources>

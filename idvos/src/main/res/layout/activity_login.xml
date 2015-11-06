@@ -119,7 +119,7 @@
 
         <TextView
             android:id="@+id/button_start"
-            style="@style/blue_button"
+            style="@style/primary_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -149,7 +149,7 @@
 
     <TextView
         android:id="@+id/button_call"
-        style="@style/green_button"
+        style="@style/primary_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="14sp"
