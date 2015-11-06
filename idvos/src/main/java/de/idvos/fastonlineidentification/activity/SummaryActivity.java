@@ -131,15 +131,15 @@ public class SummaryActivity extends BaseActivity {
         row.setBackgroundResource(R.drawable.table_row_bg);
 
         TextView keyView = new TextView(this);
-//        keyView.setBackgroundColor(Color.RED);
         keyView.setPadding(5, 5, 5, 5);
         keyView.setTextAppearance(this, android.R.style.TextAppearance_Medium);
+        keyView.setTextColor(getResources().getColor(R.color.color_accent));
         keyView.setText(key);
 
         TextView valueView = new TextView(this);
-//        valueView.setBackgroundColor(Color.GRAY);
         valueView.setPadding(5, 5, 5, 5);
         valueView.setTextAppearance(this, android.R.style.TextAppearance_Medium);
+        valueView.setTextColor(getResources().getColor(R.color.color_primary));
         valueView.setText(value);
 
         row.addView(keyView);

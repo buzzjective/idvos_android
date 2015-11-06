@@ -19,12 +19,12 @@
     <color name="button_gray_background">#666666</color>
     <color name="button_gray_background_pressed">#555555</color>
     
-    <color name="info_text_color">#333</color>
+    <color name="info_text_color">@color/color_primary</color>
     
-    <color name="login_title_text_color">#333</color>
-    <color name="login_input_text_color">#333</color>
-    <color name="login_input_text_color_hint">#888</color>
-    <color name="login_desc_text_color">#333</color>
+    <color name="login_title_text_color">@color/color_primary</color>
+    <color name="login_input_text_color">@color/color_primary</color>
+    <color name="login_input_text_color_hint">@color/color_accent</color>
+    <color name="login_desc_text_color">@color/color_primary</color>
     
     <color name="identification_instructionbar_background">@color/color_primary</color>
     <color name="identification_instruction_counter">#fff</color>

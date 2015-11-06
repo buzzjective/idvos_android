@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/logo_idvos"
+                android:src="@drawable/logo_identity_tm_blue"
                 android:adjustViewBounds="true"
                 android:scaleType="centerInside"/>
 
@@ -35,8 +35,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#ff1b2174"
                 android:textStyle="bold"
+                android:textColor="@color/color_primary"
                 android:gravity="center"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="@string/idvos_slogan"/>
@@ -55,7 +55,7 @@
                 android:text="@string/idvos_bigger_slogan"
                 android:padding="5dp"
                 android:textSize="12sp"
-                android:textColor="#000000"
+                android:textColor="@color/color_primary"
                 android:gravity="left"
                 android:textAlignment="gravity"
                 android:layout_height="wrap_content"
@@ -98,13 +98,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:textColor="#000000"
+                        android:textColor="@color/color_primary"
                         android:text="@string/idvos_practical_title"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:textSize="11sp"
                         android:gravity="center"
+                        android:textColor="@color/color_primary"
                         android:text="@string/idvos_practical"
                         android:layout_height="wrap_content" />
 
@@ -128,13 +129,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:textColor="#000000"
+                        android:textColor="@color/color_primary"
                         android:text="@string/idvos_fast_title"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:textSize="11sp"
                         android:gravity="center"
+                        android:textColor="@color/color_primary"
                         android:text="@string/idvos_fast"
                         android:layout_height="wrap_content" />
 
@@ -158,13 +160,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:textColor="#000000"
+                        android:textColor="@color/color_primary"
                         android:text="@string/idvos_secure_title"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:textSize="11sp"
                         android:gravity="center"
+                        android:textColor="@color/color_primary"
                         android:text="@string/idvos_secure"
                         android:layout_height="wrap_content" />
 
@@ -206,6 +209,8 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:textSize="12sp"
+            android:textColorLink="@color/color_accent"
+            android:textColor="@color/color_primary"
             android:text="@string/idvos_first_checkbox"/>
 
         <de.idvos.fastonlineidentification.view.NoPersistentTextCheckBox
@@ -214,6 +219,7 @@
             android:layout_height="wrap_content"
             android:checked="false"
             android:textSize="12sp"
+            android:textColor="@color/color_primary"
             android:text="@string/idvos_second_checkbox"/>
 
     </LinearLayout>

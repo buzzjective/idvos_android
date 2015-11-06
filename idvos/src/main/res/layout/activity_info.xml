@@ -48,12 +48,13 @@
                         android:layout_height="wrap_content"
                         android:text="@string/idvos_info_protection_title"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textColor="#000000"
+                        android:textColor="@color/color_primary"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:textColor="@color/color_primary"
                         android:gravity="center|left"
                         android:text="@string/idvos_info_protection" />
 
@@ -81,15 +82,15 @@
                         android:layout_height="wrap_content"
                         android:text="@string/idvos_info_security_title"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textColor="#000000"
+                        android:textColor="@color/color_primary"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center|left"
+                        android:textColor="@color/color_primary"
                         android:text="@string/idvos_info_security" />
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -114,15 +115,15 @@
                         android:layout_height="wrap_content"
                         android:text="@string/idvos_info_service_title"
                         android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textColor="#000000"
+                        android:textColor="@color/color_primary"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center|left"
+                        android:textColor="@color/color_primary"
                         android:text="@string/idvos_info_service" />
-
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

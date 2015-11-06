@@ -1,160 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:progress="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipChildren="false"
-    xmlns:progress="http://schemas.android.com/apk/res-auto"
-    android:background="#fff">
+    android:background="#fff"
+    android:clipChildren="false">
 
     <de.idvos.fastonlineidentification.view.ProgressBarDeterminate
         android:id="@+id/indicatorProgress"
         android:layout_width="match_parent"
-        android:background="#ff0a123f"
-        progress:progress="88"
-        progress:min="0"
-        progress:max="100"
+        android:layout_height="15dp"
         android:layout_below="@+id/instructionbar"
-        android:layout_height="15dp"/>
-
-
-
-
+        android:background="#ff0a123f"
+        progress:max="100"
+        progress:min="0"
+        progress:progress="88" />
 
     <LinearLayout
         android:id="@+id/instructionbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:paddingTop="@dimen/identification_instructionbar_padding_vertical"
-        android:paddingBottom="@dimen/identification_instructionbar_padding_vertical"
-
         android:background="@color/identification_instructionbar_background"
-        android:orientation="horizontal">
-        
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/identification_instructionbar_padding_vertical"
+        android:paddingTop="@dimen/identification_instructionbar_padding_vertical">
+
         <TextView
             android:id="@+id/text_instruction_counter"
             android:layout_width="@dimen/identification_instruction_counter_width"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
-            android:visibility="gone"
-            android:textSize="@dimen/identification_instruction_text_size"
+            android:gravity="center_horizontal"
             android:textColor="@color/identification_instruction_counter"
-            android:gravity="center_horizontal"/>
-        
+            android:textSize="@dimen/identification_instruction_text_size"
+            android:visibility="gone" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:orientation="vertical">
-        
-	        <TextView
-	            android:id="@+id/text_instruction"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
+
+            <TextView
+                android:id="@+id/text_instruction"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:textStyle="bold"
-	            android:textSize="@dimen/identification_instruction_text_size"
-	            android:textColor="@color/identification_instruction_text"/>
-            
-	        <TextView
-	            android:id="@+id/text_instruction_detailed"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:textSize="@dimen/identification_instruction_text_size"
+                android:textColor="@color/identification_instruction_text"
+                android:textSize="@dimen/identification_instruction_text_size"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text_instruction_detailed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center"
-                android:singleLine="true"
-	            android:textColor="@color/identification_instruction_text"
-	            android:ellipsize="marquee"
+                android:ellipsize="marquee"
                 android:focusable="true"
-                android:lines="1"
                 android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:lines="1"
+                android:marqueeRepeatLimit="marquee_forever"
                 android:scrollHorizontally="true"
-                android:marqueeRepeatLimit="marquee_forever"/>
-
-
+                android:singleLine="true"
+                android:textColor="@color/identification_instruction_text"
+                android:textSize="@dimen/identification_instruction_text_size" />
         </LinearLayout>
-        
-        
-
-        
     </LinearLayout>
-    
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/indicatorProgress">
-    
-	    <RelativeLayout
-	        android:id="@+id/frame_send"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent"
+
+        <RelativeLayout
+            android:id="@+id/frame_send"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginBottom="150dp"
-            android:visibility="visible"/>
+            android:visibility="visible" />
 
+        <RelativeLayout
+            android:id="@+id/mask_window"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-	    
-	    <RelativeLayout
-	        android:id="@+id/mask_window"
-	        android:layout_width="match_parent"
-	        android:layout_height="match_parent">
-	    
-		    <ImageView
-		        android:id="@+id/cam_window"
-		        android:layout_width="300dp"
-		        android:layout_height="200dp"
-		        android:layout_alignParentTop="true"
-		        android:layout_centerHorizontal="true"
-		        android:layout_marginTop="@dimen/identification_cam_window_margin_top"
-                android:visibility="invisible"
-		        android:src="@drawable/camera_box"
-		        android:scaleType="fitXY"/>
-		    
-		    <de.idvos.fastonlineidentification.view.TANInput
-		        android:id="@+id/tan"
-		        android:layout_width="match_parent"
-		        android:layout_height="@dimen/identification_cam_window_height"
-		        android:layout_alignParentTop="true"
-		        android:layout_marginTop="@dimen/identification_cam_window_margin_top"
-		        android:layout_marginLeft="@dimen/identification_cam_window_margin_horizontal"
-		        android:layout_marginRight="@dimen/identification_cam_window_margin_horizontal"
-		        android:visibility="invisible"/>
-		    
-		    <View
-		        android:layout_width="match_parent"
-		        android:layout_height="@dimen/identification_cam_window_margin_top"
-		        android:layout_alignParentTop="true"
-		        android:background="@color/identification_cam_mask"/>
-		    
-		    <View
-		        android:id="@+id/mask_bottom"
-		        android:layout_width="match_parent"
-		        android:layout_height="match_parent"
-				android:layout_below="@id/cam_window"
-                />
-		    
-		    <View
-		        android:layout_width="match_parent"
-		        android:layout_height="match_parent"
-		        android:layout_alignTop="@id/cam_window"
-		        android:layout_toLeftOf="@id/cam_window"
-		        android:layout_above="@id/mask_bottom"
-		        android:background="@color/identification_cam_mask"/>
-		    
-		    <View
-		        android:layout_width="match_parent"
-		        android:layout_height="match_parent"
-		        android:layout_alignTop="@id/cam_window"
-		        android:layout_toRightOf="@id/cam_window"
-		        android:layout_above="@id/mask_bottom"
-		        android:background="@color/identification_cam_mask"/>
-	        
-	    </RelativeLayout>
+            <ImageView
+                android:id="@+id/cam_window"
+                android:layout_width="300dp"
+                android:layout_height="200dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/identification_cam_window_margin_top"
+                android:scaleType="fitXY"
+                android:src="@drawable/camera_box"
+                android:visibility="invisible" />
 
+            <de.idvos.fastonlineidentification.view.TANInput
+                android:id="@+id/tan"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/identification_cam_window_height"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="@dimen/identification_cam_window_margin_horizontal"
+                android:layout_marginRight="@dimen/identification_cam_window_margin_horizontal"
+                android:layout_marginTop="@dimen/identification_cam_window_margin_top"
+                android:visibility="invisible" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/identification_cam_window_margin_top"
+                android:layout_alignParentTop="true"
+                android:background="@color/identification_cam_mask" />
 
-        
+            <View
+                android:id="@+id/mask_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/cam_window" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/mask_bottom"
+                android:layout_alignTop="@id/cam_window"
+                android:layout_toLeftOf="@id/cam_window"
+                android:background="@color/identification_cam_mask" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/mask_bottom"
+                android:layout_alignTop="@id/cam_window"
+                android:layout_toRightOf="@id/cam_window"
+                android:background="@color/identification_cam_mask" />
+
+        </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
@@ -167,41 +149,40 @@
         android:background="#ffffff"
         android:visibility="visible">
 
-
         <TextView
             android:id="@+id/frame_receive_tv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:text="@string/idvos_please_wait"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="@string/idvos_please_wait"/>
+            android:textColor="@color/color_primary" />
 
     </RelativeLayout>
-
 
     <ImageView
         android:id="@+id/button_swap_light"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/identification_control_margin_bottom"
+        android:layout_marginRight="@dimen/identification_control_margin_right"
+        android:layout_marginTop="@dimen/identification_control_spacing"
         android:background="#ff585c5f"
         android:padding="5dp"
-        android:layout_marginTop="@dimen/identification_control_spacing"
-        android:layout_marginRight="@dimen/identification_control_margin_right"
         android:scaleType="centerInside"
-        android:src="@drawable/ic_action_wb_incandescent"/>
-    
+        android:src="@drawable/ic_action_wb_incandescent" />
+
     <ImageView
         android:id="@+id/button_swap_camera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-		android:layout_above="@id/button_swap_light"
-		android:layout_alignLeft="@id/button_swap_light"
+        android:layout_above="@id/button_swap_light"
+        android:layout_alignLeft="@id/button_swap_light"
         android:background="#ff585c5f"
         android:padding="5dp"
         android:scaleType="centerInside"
-        android:src="@drawable/ic_action_switch_camera"/>
+        android:src="@drawable/ic_action_switch_camera" />
 
 </RelativeLayout>
