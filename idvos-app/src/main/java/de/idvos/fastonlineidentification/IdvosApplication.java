@@ -12,6 +12,6 @@ public class IdvosApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        IdvosSDK.initialize(this, IdvosSDK.Mode.PRODUCTION);
+        IdvosSDK.initialize(this, IdvosSDK.Mode.TEST);
     }
 }

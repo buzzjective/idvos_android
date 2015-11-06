@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="idvos_app_name">idvos Identification</string>
+    <string name="idvos_app_name">identity Video</string>
     <string name="idvos_start_title">Welcome</string>
     <string name="idvos_start_accept">Continue</string>
     <string name="idvos_terms_label">Terms &amp; Conditions</string>
@@ -9,7 +9,7 @@
     <string name="idvos_info_label">Information</string>
     <string name="idvos_connecting">Connecting</string>
     <string name="idvos_info_call">Please call us if you have any questions or problems</string>
-    <string name="idvos_info_info">idvos carries out online identifications based on legal requirements. You can identify from anywhere with your PC or mobile device. The security of your data is what matters most to us.</string>
+    <string name="idvos_info_info">identity Video carries out online identifications based on legal requirements. You can identify from anywhere with your PC or mobile device. The security of your data is what matters most to us.</string>
     <string name="idvos_login_label">Registration</string>
     <string name="idvos_login_start">Start identification</string>
     <string name="idvos_login_lastname">Surname</string>
@@ -41,7 +41,7 @@
     <string name="idvos_info_security">P2P connection and the use of certified data centers in Germany meet maximum data security requirements.</string>
     <string name="idvos_info_service_title">24/7 SERVICE GUARANTEE</string>
     <string name="idvos_info_service">Service hours 24 hours, 7 days a week.</string>
-    <string name="idvos_bigger_slogan">idvos provides the easiest and most convenient AML compliant authentication method. The security of your data is most important to us.</string>
+    <string name="idvos_bigger_slogan">identity Video provides the easiest and most convenient AML compliant authentication method. The security of your data is most important to us.</string>
     <string name="idvos_practical_title">Convenient!</string>
     <string name="idvos_practical">Convenient identification from home or on the move. </string>
     <string name="idvos_fast_title">Quick!</string>

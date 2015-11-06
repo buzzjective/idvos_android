@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="idvos_app_name">idvos Identifizierung</string>
+    <string name="idvos_app_name">identity Video</string>
     <string name="idvos_start_title">Willkommen</string>
     <string name="idvos_start_accept">Weiter</string>
     <string name="idvos_terms_label">Bedingungen</string>
@@ -9,7 +9,7 @@
     <string name="idvos_info_label">Informationen</string>
     <string name="idvos_connecting">Verbinden</string>
     <string name="idvos_info_call">Rufen Sie uns an bei Problemen oder Fragen</string>
-    <string name="idvos_info_info">idvos führt online Identifizierungen nach den gesetzlichen Bestimmungen durch. Sie können sich online oder mobil von zu Hause oder unterwegs jeder Zeit identifizieren. Die Sicherheit Ihrer Daten steht dabei im Vordergrund.</string>
+    <string name="idvos_info_info">identity Video führt online Identifizierungen nach den gesetzlichen Bestimmungen durch. Sie können sich online oder mobil von zu Hause oder unterwegs jeder Zeit identifizieren. Die Sicherheit Ihrer Daten steht dabei im Vordergrund.</string>
     <string name="idvos_login_label">Anmeldung</string>
     <string name="idvos_login_start">Identifizierung starten</string>
     <string name="idvos_login_lastname">Nachname</string>
@@ -32,7 +32,7 @@
     <string name="idvos_verificationresult_success">Ihre Identifizierung war erfolgreich!</string>
     <string name="idvos_verificationresult_failure">Ihre Identifizierung war nicht erfolgreich!</string>
     <string name="idvos_verificationresult_confirmation">Abschließen</string>
-    <string name="idvos_agb_error">Um die Identifizierung von idvos zu nutzen, müssen Sie zuerst bestätigen, dass Sie die AGB und Datenschutzerklärung akzeptieren. Zusätzlich müssen Sie uns aus gesetzlichen Gründen zur Aufnahme des Gespräches zustimmen.</string>
+    <string name="idvos_agb_error">Um die Identifizierung von identity Video zu nutzen, müssen Sie zuerst bestätigen, dass Sie die AGB und Datenschutzerklärung akzeptieren. Zusätzlich müssen Sie uns aus gesetzlichen Gründen zur Aufnahme des Gespräches zustimmen.</string>
     <string name="idvos_login_title">Bitte geben Sie Ihre Anmeldedaten ein:</string>
     <string name="idvos_slogan">Ihre Identifizierung von zu Hause</string>
     <string name="idvos_info_protection_title">DATENSCHUTZ</string>
@@ -41,7 +41,7 @@
     <string name="idvos_info_security">P2P-Verbindung erfüllt Anforderungen an höchste Datensicherheit mit Verwendung zertifizierter Rechenzentren in Deutschland.</string>
     <string name="idvos_info_service_title">24/7 SERVICE GARANTIE</string>
     <string name="idvos_info_service">Service-Zeiten 24 Stunden, 7 Tage die Woche.</string>
-    <string name="idvos_bigger_slogan">idvos bietet die einfachste und bequemste GwG-konforme Identifizierungsmethode. Die Sicherheit Ihrer Daten liegt uns dabei besonders am Herzen.</string>
+    <string name="idvos_bigger_slogan">identity Video bietet die einfachste und bequemste GwG-konforme Identifizierungsmethode. Die Sicherheit Ihrer Daten liegt uns dabei besonders am Herzen.</string>
     <string name="idvos_practical_title">Praktisch!</string>
     <string name="idvos_practical">Führen Sie die Identifizierung ganz bequem von zu Hause aus durch.</string>
     <string name="idvos_fast_title">Schnell!</string>
