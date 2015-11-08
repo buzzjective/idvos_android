@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -59,6 +60,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
     private RelativeLayout mFrameSend;
     private RelativeLayout mFrameRecieve;
     private TextView mFrameRecieveTV;
+    private TextView retryTimer;
     private TANInput mTANInput;
     private ProgressDialog mProgressDialog;
     private RequestQueue mRequestQueue;
@@ -69,13 +71,28 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
 
     ProgressBarDeterminate mProgressBarDeterminate;
 
+    private Handler handler = new Handler();
+
+    private int counter = 90;
+    private Runnable counterTick = new Runnable() {
+        @Override
+        public void run() {
+            retryTimer.setText(String.valueOf(counter));
+            if (counter == 0){
+                cancelIdentification();
+            }
+
+            counter--;
+            handler.postDelayed(this, 1333);
+        }
+    };
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_identification);
 
         serverUrl = IdvosSDK.getInstance().getMode().getEndpoint() + "api/v1/mobile/";
-
 
         setMenuButton(R.drawable.ic_action_navigation_close, true);
         setMenuButton(R.drawable.ic_action_helpbutton, false);
@@ -87,6 +104,8 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
         mFrameSend = (RelativeLayout) findViewById(R.id.frame_send);
         mFrameRecieve = (RelativeLayout) findViewById(R.id.frame_recieve);
         mFrameRecieveTV = (TextView) findViewById(R.id.frame_receive_tv);
+
+        retryTimer = (TextView) findViewById(R.id.retry_timer);
 
         mTANInput = (TANInput) findViewById(de.idvos.fastonlineidentification.sdk.R.id.tan);
         mTANInput.setOnCheckTANListener(this);
@@ -137,25 +156,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
                 .setPositiveButton(R.string.idvos_yes, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        waitingTimeTracker.endTracking();
-
-                        TokBoxManager.getInstance(IdentificationActivity.this, IdentificationActivity.this).finishSession();
-                        PusherManager.getInstance(IdentificationActivity.this).disconnect();
-
-                        IdentificationResult identificationResult = new IdentificationResult(
-                                false,
-                                null,
-                                new WaitingTimeTracker(IdentificationActivity.this).getWaitingTimeMillis()
-                        );
-
-                        Intent result = new Intent();
-                        result.putExtra(
-                                IdentificationResult.IDENTIFICATION_RESULT,
-                                identificationResult
-                        );
-                        setResult(RESULT_CANCELED, result);
-
-                        finish();
+                        cancelIdentification();
                     }
                 })
                 .setNegativeButton(R.string.idvos_no, new DialogInterface.OnClickListener() {
@@ -170,6 +171,28 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
 
 //        onShowTanInstruction();
         mInstructionBar.hideMask();
+    }
+
+    private void cancelIdentification() {
+        waitingTimeTracker.endTracking();
+
+        TokBoxManager.getInstance(IdentificationActivity.this, IdentificationActivity.this).finishSession();
+        PusherManager.getInstance(IdentificationActivity.this).disconnect();
+
+        IdentificationResult identificationResult = new IdentificationResult(
+                false,
+                null,
+                new WaitingTimeTracker(IdentificationActivity.this).getWaitingTimeMillis()
+        );
+
+        Intent result = new Intent();
+        result.putExtra(
+                IdentificationResult.IDENTIFICATION_RESULT,
+                identificationResult
+        );
+        setResult(RESULT_CANCELED, result);
+
+        finish();
     }
 
 
@@ -249,6 +272,7 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
                 return;
             case Progress.STATE_SIGNALING_READY:
                 new WaitingTimeTracker(this).startTracking();
+                handler.post(counterTick);
                 return;
             case Progress.STATE_READY:
 //                mTextFlow.setText("Wir bitten um ein wenig Geduld. Ihre Identifizierung wird gleich gestartet..");
@@ -331,6 +355,13 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
     @Override
     public void onTokBoxConnected() {
         TokBoxManager.getInstance(this, this).startTransmitting(mFrameSend);
+    }
+
+    @Override
+    public void onTokBoxConnectionCreated() {
+        waitingTimeTracker.endTracking();
+        handler.removeCallbacksAndMessages(null);
+        retryTimer.setVisibility(View.GONE);
     }
 
     @Override
@@ -631,6 +662,9 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
     @Override
     protected void onDestroy() {
         super.onDestroy();
+
+        handler.removeCallbacksAndMessages(null);
+
         try {
             PusherManager.getInstance(this).disconnect();
             TokBoxManager.getInstance(this, this).finishSession();

@@ -185,4 +185,17 @@
         android:scaleType="centerInside"
         android:src="@drawable/ic_action_switch_camera" />
 
+    <TextView
+        android:id="@+id/retry_timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/button_swap_camera"
+        android:layout_toRightOf="@id/frame_recieve"
+        android:layout_alignTop="@id/frame_recieve"
+        android:layout_alignBottom="@id/frame_recieve"
+        android:gravity="center"
+        android:visibility="visible"
+        android:textColor="@color/color_accent"
+        android:textSize="48sp"/>
+
 </RelativeLayout>

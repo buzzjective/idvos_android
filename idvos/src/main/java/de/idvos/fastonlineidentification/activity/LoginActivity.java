@@ -331,6 +331,11 @@ public class LoginActivity extends BaseActivity implements OnClickListener, Push
     }
 
     @Override
+    public void onTokBoxConnectionCreated() {
+
+    }
+
+    @Override
     public void onPusherError(String message, String code, Exception e) {
         e.printStackTrace();
         mProgressDialog.dismiss();

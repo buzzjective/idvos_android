@@ -12,6 +12,7 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.opentok.android.BaseVideoRenderer;
+import com.opentok.android.Connection;
 import com.opentok.android.OpentokError;
 import com.opentok.android.Publisher;
 import com.opentok.android.PublisherKit;
@@ -43,6 +44,8 @@ public class TokBoxManager implements SessionListener, Session.ConnectionListene
     public static interface TokBoxCallback {
 
         public void onTokBoxConnected();
+
+        public void onTokBoxConnectionCreated();
 
         public void onTokBoxError(Exception e);
 
@@ -310,8 +313,8 @@ public class TokBoxManager implements SessionListener, Session.ConnectionListene
     }
 
     @Override
-    public void onConnectionCreated(Session session, com.opentok.android.Connection connection) {
-        new WaitingTimeTracker(mContext).endTracking();
+    public void onConnectionCreated(Session session, Connection connection) {
+        mCallback.onTokBoxConnectionCreated();
     }
 
     @Override
