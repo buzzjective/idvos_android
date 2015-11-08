@@ -8,7 +8,7 @@
         android:name=".IdvosApplication">
 
         <activity
-            android:name=".activity.StartActivity"
+            android:name=".InitialActivity"
             android:label="@string/idvos_app_name">
 
             <intent-filter>
@@ -18,6 +18,8 @@
             </intent-filter>
 
         </activity>
+
+        <activity android:name=".activity.StartActivity"/>
 
     </application>
 

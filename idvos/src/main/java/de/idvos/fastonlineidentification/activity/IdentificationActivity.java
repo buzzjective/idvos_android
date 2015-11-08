@@ -188,8 +188,6 @@ public class IdentificationActivity extends BaseActivity implements PusherCallba
             }
         }).create().show();
         mInstructionBar.showMask();
-
-
     }
 
     @Override

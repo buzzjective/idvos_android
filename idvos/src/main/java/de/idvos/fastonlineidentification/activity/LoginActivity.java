@@ -45,6 +45,9 @@ public class LoginActivity extends BaseActivity implements OnClickListener, Push
 
     private static final String TAG = "LoginActivity";
 
+    private static String LAST_LOGIN = null;
+    private static String LAST_PASSWORD = null;
+
 
     private View mButtonLastNameInfo;
     private View mButtonCodeInfo;
@@ -70,8 +73,16 @@ public class LoginActivity extends BaseActivity implements OnClickListener, Push
         mButtonLastNameInfo = findViewById(R.id.button_info_lastname);
         mButtonCodeInfo = findViewById(R.id.button_info_code);
         mButtonStart = findViewById(R.id.button_start);
+
         mEditLastName = (EditText) findViewById(R.id.edit_lastname);
+        if (LAST_LOGIN != null) {
+            mEditLastName.setText(LAST_LOGIN);
+        }
+
         mEditCode = (EditText) findViewById(R.id.edit_code);
+        if (LAST_PASSWORD != null) {
+            mEditCode.setText(LAST_PASSWORD);
+        }
 
         mButtonLastNameInfo.setOnClickListener(this);
         mButtonCodeInfo.setOnClickListener(this);
@@ -141,6 +152,9 @@ public class LoginActivity extends BaseActivity implements OnClickListener, Push
                 alertBuilder.setMessage(R.string.idvos_incorrect_data).setPositiveButton(R.string.idvos_ok, null).setCancelable(true).create().show();
                 return;
             }
+
+            LAST_LOGIN = lastName;
+            LAST_PASSWORD = shortCode;
 
             mProgress.setIdentificationWithCode(lastName, shortCode);
             mState = Progress.STATE_START;

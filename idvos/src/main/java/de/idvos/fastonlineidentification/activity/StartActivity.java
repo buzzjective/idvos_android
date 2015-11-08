@@ -1,5 +1,6 @@
 package de.idvos.fastonlineidentification.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -25,6 +26,8 @@ public class StartActivity extends BaseActivity implements OnClickListener {
     private static final int REQUEST_START_IDENTIFICATION = 0;
     private static final int REQUEST_LOGIN = 1;
 
+    private static final String SHOW_LOGIN = "show_login";
+
     private Progress mIdentificationProgress;
 
     private CheckBox mFirstCheckbox;
@@ -33,11 +36,20 @@ public class StartActivity extends BaseActivity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Intent intent = getIntent();
+
+        if (intent.hasExtra(SHOW_LOGIN) && intent.getBooleanExtra(SHOW_LOGIN, false)){
+            startActivityForResult(
+                    LoginActivity.getIntent(this, mIdentificationProgress),
+                    REQUEST_LOGIN
+            );
+        }
+
         setContentView(de.idvos.fastonlineidentification.sdk.R.layout.activity_start);
         setTitle(de.idvos.fastonlineidentification.sdk.R.string.idvos_start_title);
         setMenuButton(R.drawable.ic_action_helpbutton, false);
 
-        Intent intent = getIntent();
         mIdentificationProgress = new Progress();
 
         if (intent.hasExtra(IdvosSDK.KEY_IDENTIFICATION_HASH)) {
@@ -102,6 +114,12 @@ public class StartActivity extends BaseActivity implements OnClickListener {
                     REQUEST_START_IDENTIFICATION
             );
         }
+    }
+
+    public static Intent getIntent(Context context, boolean showLogin){
+        Intent intent = new Intent(context, StartActivity.class);
+        intent.putExtra(SHOW_LOGIN, showLogin);
+        return intent;
     }
 
     @Override
