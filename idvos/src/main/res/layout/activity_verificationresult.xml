@@ -20,7 +20,7 @@
         android:layout_height="@dimen/verificationresult_image_size"
 		android:layout_centerHorizontal="true"
 		android:layout_above="@id/center"
-        android:src="@drawable/ic_launcher"/>
+        android:src="@mipmap/ic_launcher"/>
     
     <TextView
         android:id="@+id/text_result"
