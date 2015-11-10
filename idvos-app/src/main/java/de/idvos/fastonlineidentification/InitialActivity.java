@@ -10,7 +10,7 @@ import de.idvos.fastonlineidentification.sdk.IdentificationResult;
 /**
  * Entry point to the Application
  */
-public class InitialActivity extends Activity{
+public class InitialActivity extends Activity {
 
     private static final int START_ACTIVITY_REQUEST_CODE = 0;
 
@@ -28,11 +28,15 @@ public class InitialActivity extends Activity{
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (resultCode == RESULT_CANCELED && data.hasExtra(IdentificationResult.IDENTIFICATION_RESULT)){
-            startActivityForResult(
-                    StartActivity.getIntent(this, true),
-                    START_ACTIVITY_REQUEST_CODE
-            );
+        if (resultCode == RESULT_CANCELED) {
+            if (data == null) {
+                finish();
+            } else if (data.hasExtra(IdentificationResult.IDENTIFICATION_RESULT)) {
+                startActivityForResult(
+                        StartActivity.getIntent(this, true),
+                        START_ACTIVITY_REQUEST_CODE
+                );
+            }
         }
     }
 }

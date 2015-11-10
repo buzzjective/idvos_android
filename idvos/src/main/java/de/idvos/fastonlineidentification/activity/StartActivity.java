@@ -37,6 +37,7 @@ public class StartActivity extends BaseActivity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        mIdentificationProgress = new Progress();
         Intent intent = getIntent();
 
         if (intent.hasExtra(SHOW_LOGIN) && intent.getBooleanExtra(SHOW_LOGIN, false)){
@@ -50,7 +51,6 @@ public class StartActivity extends BaseActivity implements OnClickListener {
         setTitle(de.idvos.fastonlineidentification.sdk.R.string.idvos_start_title);
         setMenuButton(R.drawable.ic_action_helpbutton, false);
 
-        mIdentificationProgress = new Progress();
 
         if (intent.hasExtra(IdvosSDK.KEY_IDENTIFICATION_HASH)) {
             mIdentificationProgress.setIdentificationHash(intent.getStringExtra(IdvosSDK.KEY_IDENTIFICATION_HASH));
