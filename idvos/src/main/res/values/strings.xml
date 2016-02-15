@@ -8,7 +8,7 @@
     <string name="idvos_second_checkbox">I agree that audio recordings will be made and stored.</string>
     <string name="idvos_info_label">Information</string>
     <string name="idvos_connecting">Connecting</string>
-    <string name="idvos_info_call">Please call us if you have any questions or problems</string>
+    <string name="idvos_info_call">Call support hotline</string>
     <string name="idvos_info_info">identity Video carries out online identifications based on legal requirements. You can identify from anywhere with your PC or mobile device. The security of your data is what matters most to us.</string>
     <string name="idvos_login_label">Registration</string>
     <string name="idvos_login_start">Start identification</string>
@@ -39,8 +39,8 @@
     <string name="idvos_info_protection">Maintaining highest data security standards through data minimization</string>
     <string name="idvos_info_security_title">SECURITY</string>
     <string name="idvos_info_security">P2P connection and the use of certified data centers in Germany meet maximum data security requirements.</string>
-    <string name="idvos_info_service_title">24/7 SERVICE GUARANTEE</string>
-    <string name="idvos_info_service">Service hours 24 hours, 7 days a week.</string>
+    <string name="idvos_info_service_title">EXTENDED SERVICE HOURS</string>
+    <string name="idvos_info_service">Monday to Friday 8 AM to 10 PM and Saturday 8 AM - 6 PM Central European Time (CET).</string>
     <string name="idvos_bigger_slogan">identity Video provides the easiest and most convenient AML compliant authentication method. The security of your data is most important to us.</string>
     <string name="idvos_practical_title">Convenient!</string>
     <string name="idvos_practical">Convenient identification from home or on the move. </string>
@@ -53,11 +53,11 @@
     <string name="idvos_cancel_session_confirm">Do you really want to cancel the video session?</string>
     <string name="idvos_yes">Yes</string>
     <string name="idvos_no">No</string>
-    <string name="idvos_phone">tel: +493020849261</string>
+    <string name="idvos_phone">tel: +4921168773235</string>
     <string name="idvos_no_flashlight">Front camera has no flash!</string>
     <string name="idvos_connecting_message">Connecting…</string>
     <string name="idvos_timeout_error">Error connecting the server at the right time</string>
-    <string name="idvos_surname_request">Please, enter your surname</string>
+    <string name="idvos_surname_request">Please enter your surname</string>
     <string name="idvos_reference_number_request">Please enter the reference number which was sent via email by us or our partner.</string>
     <string name="idvos_incorrect_data">Unfortunately, your credentials are incorrect</string>
     <string name="idvos_ok">OK</string>
@@ -66,7 +66,9 @@
     <string name="idvos_terms_and_conditions">Terms and Conditions</string>
     <string name="idvos_response_phone">Mobile phone</string>
     <string name="idvos_response_mail">E-mail</string>
+    <string name="idvos_response_email">E-mail</string>
     <string name="idvos_response_name">First name(s)</string>
+    <string name="idvos_response_first_name">First name(s)</string>
     <string name="idvos_response_surname">Surname</string>
     <string name="idvos_response_date_of_birth">Birthday</string>
     <string name="idvos_response_place_of_birth">Birthplace</string>
@@ -74,9 +76,13 @@
     <string name="idvos_response_address">Address</string>
     <string name="idvos_response_city">Place of residence</string>
     <string name="idvos_response_post_code">Postal code</string>
-    <string name="idvos_response_gender">Sex</string>
+    <string name="idvos_response_gender">Gender</string>
     <string name="idvos_response_country">Country</string>
     <string name="idvos_response_honorific">Honorific</string>
+    <string name="idvos_response_serial_number">Serial Number</string>
+    <string name="idvos_response_pseudonym">Artist name</string>
+    <string name="idvos_response_issued_at">Issued at</string>
+    <string name="idvos_response_authority">Behörde</string>
     <string name="idvos_login_desc">What is required for the identification?\n\nFor the identification you need:\n
         <ul style="list-style-type:disc">
             <li>a stable Internet connection \n</li>

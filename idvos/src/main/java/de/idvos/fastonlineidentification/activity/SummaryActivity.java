@@ -58,6 +58,7 @@ public class SummaryActivity extends BaseActivity {
         keyToStringResourceMap.put(ResponseConstants.MOBILE_PHONE, R.string.idvos_response_phone);
         keyToStringResourceMap.put(ResponseConstants.EMAIL, R.string.idvos_response_mail);
         keyToStringResourceMap.put(ResponseConstants.NAME, R.string.idvos_response_name);
+        keyToStringResourceMap.put(ResponseConstants.FIRST_NAME, R.string.idvos_response_name);
         keyToStringResourceMap.put(ResponseConstants.SURNAME, R.string.idvos_response_surname);
         keyToStringResourceMap.put(ResponseConstants.DATE_OF_BIRTH, R.string.idvos_response_date_of_birth);
         keyToStringResourceMap.put(ResponseConstants.PLACE_OF_BIRTH, R.string.idvos_response_place_of_birth);
@@ -68,6 +69,10 @@ public class SummaryActivity extends BaseActivity {
         keyToStringResourceMap.put(ResponseConstants.GENDER, R.string.idvos_response_gender);
         keyToStringResourceMap.put(ResponseConstants.COUNTRY, R.string.idvos_response_country);
         keyToStringResourceMap.put(ResponseConstants.HONORIFIC, R.string.idvos_response_honorific);
+        keyToStringResourceMap.put(ResponseConstants.SERIAL_NUMBER, R.string.idvos_response_serial_number);
+        keyToStringResourceMap.put(ResponseConstants.PSEUDONYM, R.string.idvos_response_pseudonym);
+        keyToStringResourceMap.put(ResponseConstants.ISSUED_AT, R.string.idvos_response_issued_at);
+        keyToStringResourceMap.put(ResponseConstants.AUTHORITY, R.string.idvos_response_authority);
 
         filterList.add(ResponseConstants.FILTER_TITLE);
         filterList.add(ResponseConstants.FILTER_ADDRESS_TITLE);
