@@ -142,8 +142,9 @@ public class TANInput extends FrameLayout {
                     public void run() {
                         setInputEnabled(true);
                         mTextStatus.setText(R.string.idvos_taninput_invalid);
+						clean();
                     }
-                }, 5000);
+                }, 4000);
             }
 		}
 		else {
@@ -167,6 +168,7 @@ public class TANInput extends FrameLayout {
 		for (EditText digit: mDigits) {
 			digit.setText("");
 		}
+		mDigits[0].requestFocus();
 	}
 	
 	public String getTAN() {
@@ -221,9 +223,13 @@ public class TANInput extends FrameLayout {
 	
 	private void updateStatusText() {
 		mTextStatus.setEnabled(mIsTanValid);
-		mTextStatus.setText(mIsTanValid?getResources().getString(R.string.idvos_taninput_verify):" ");
-		
-		if (!mIsTanValid) {
+
+		if (mIsTanValid) {
+			mTextStatus.setText(getResources().getString(R.string.idvos_taninput_verify));
+			mTextStatus.setVisibility(View.VISIBLE);
+		} else {
+			mTextStatus.setVisibility(View.INVISIBLE);
+			mTextStatus.setText(" ");
 			mTextStatus.setTextColor(TAN_UNKNOWN_TEXT_COLOR);
 			mBackground.setBackgroundColor(TAN_UNKNOWN_BACKGROUND);
 		}
