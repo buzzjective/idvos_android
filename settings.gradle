@@ -1,2 +1,2 @@
-include ':example', ':idvos-app'
+include ':example', ':idvos-app', ':opentok-android-sdk-2.8.1'
 include ':idvos'
