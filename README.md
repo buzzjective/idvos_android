@@ -32,6 +32,15 @@ And those to root build.gradle allprojects:
         maven { url 'http://download.crashlytics.com/maven' }
     }
 
+## ProGuard release configuration
+
+Add the following lines to your proguard-rules configuration file if you have set **minifyEnabled** to true in your debug/release build type:
+
+    # OpenTok
+    -keep class com.opentok.jni.** { *; }
+    -keep class com.opentok.android.** { *; }
+    -keep class com.opentok.client.** { *; }
+    -keep class com.opentok.impl.** { *; }
 
 ## SDK Setup
 
