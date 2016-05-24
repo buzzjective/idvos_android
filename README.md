@@ -30,6 +30,7 @@ And those to root build.gradle allprojects:
     repositories {
         maven { url "https://jitpack.io" }
         maven { url 'http://download.crashlytics.com/maven' }
+        maven { url 'http://tokbox.bintray.com/maven' }
     }
 
 

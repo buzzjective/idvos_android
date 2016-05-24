@@ -31,7 +31,7 @@ artifacts {
 }
 
 dependencies {
-    compile project(':opentok-android-sdk-2.8.1')
+    compile 'com.opentok.android:opentok-android-sdk:2.8.1-REL-1785'
     compile 'com.mcxiaoke.volley:library:1.0.19'
     compile 'com.pusher:pusher-java-client:0.3.1'
     compile 'com.android.support:support-v4:21.0.3'

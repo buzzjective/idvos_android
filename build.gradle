@@ -16,5 +16,6 @@ allprojects {
     repositories {
         jcenter()
         maven { url 'http://download.crashlytics.com/maven' }
+        maven { url 'http://tokbox.bintray.com/maven' }
     }
 }
